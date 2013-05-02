@@ -113,10 +113,11 @@
                             </webView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dN2-7T-yty">
                                 <items>
-                                    <barButtonItem title="Discuss" id="Frd-dx-3XV"/>
-                                    <barButtonItem title="Readability" id="btn-xf-y9g"/>
-                                    <barButtonItem title="Share" id="o67-5Q-ddB"/>
-                                    <barButtonItem title="Vote" id="fCA-2h-gAm"/>
+                                    <barButtonItem title="▲" style="plain" id="fCA-2h-gAm"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Kxm-d4-0Jt"/>
+                                    <barButtonItem style="plain" systemItem="action" id="o67-5Q-ddB"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Y6n-8G-gnp"/>
+                                    <barButtonItem title="▼" style="plain" id="sNt-P7-DP1"/>
                                 </items>
                                 <color key="tintColor" red="0.75294119120000003" green="0.1411764771" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
@@ -132,7 +133,13 @@
                             <constraint firstItem="dN2-7T-yty" firstAttribute="trailing" secondItem="D2d-zi-37Y" secondAttribute="trailing" type="default" id="ueo-LY-OvO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="article" id="fxI-zU-Qr1"/>
+                    <navigationItem key="navigationItem" title="article" id="fxI-zU-Qr1">
+                        <barButtonItem key="rightBarButtonItem" title="Discuss" id="Frd-dx-3XV">
+                            <connections>
+                                <segue destination="uOp-nW-8AV" kind="push" id="fuH-rV-EDr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="articleWebView" destination="gww-PC-aKn" id="ET1-1f-0aM"/>
                     </connections>
@@ -140,6 +147,20 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RWQ-ZU-yiP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1293" y="39"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xeu-Ox-yl0">
+            <objects>
+                <viewController id="uOp-nW-8AV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="haG-2R-Dvv">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nU6-Ml-6t9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1709" y="39"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="87y-SL-EJR">
