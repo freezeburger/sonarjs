@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F12E5CE1732C55A00B55EB0 /* DKArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F12E5CD1732C55A00B55EB0 /* DKArticleTableViewCell.m */; };
 		1F31A75717312EDB004343FF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F31A75617312EDB004343FF /* UIKit.framework */; };
 		1F31A75917312EDB004343FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F31A75817312EDB004343FF /* Foundation.framework */; };
 		1F31A75B17312EDB004343FF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F31A75A17312EDB004343FF /* CoreGraphics.framework */; };
@@ -31,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F12E5CC1732C55A00B55EB0 /* DKArticleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKArticleTableViewCell.h; path = View/DKArticleTableViewCell.h; sourceTree = "<group>"; };
+		1F12E5CD1732C55A00B55EB0 /* DKArticleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKArticleTableViewCell.m; path = View/DKArticleTableViewCell.m; sourceTree = "<group>"; };
 		1F31A75317312EDB004343FF /* echojs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = echojs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F31A75617312EDB004343FF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1F31A75817312EDB004343FF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -84,6 +87,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F12E5CB1732C52600B55EB0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1F12E5CC1732C55A00B55EB0 /* DKArticleTableViewCell.h */,
+				1F12E5CD1732C55A00B55EB0 /* DKArticleTableViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		1F31A74A17312EDB004343FF = {
 			isa = PBXGroup;
 			children = (
@@ -114,9 +126,10 @@
 		1F31A75C17312EDB004343FF /* echojs */ = {
 			isa = PBXGroup;
 			children = (
-				1F31A76517312EDB004343FF /* DKAppDelegate.h */,
+				1F12E5CB1732C52600B55EB0 /* View */,
 				1F31A78017313E3A004343FF /* AFNetworking */,
 				1F31A77C17312FFC004343FF /* Controller */,
+				1F31A76517312EDB004343FF /* DKAppDelegate.h */,
 				1F31A76617312EDB004343FF /* DKAppDelegate.m */,
 				1F31A76E17312EDB004343FF /* MainStoryboard.storyboard */,
 				1F31A75D17312EDB004343FF /* Supporting Files */,
@@ -255,6 +268,7 @@
 				1F31A79B17313E3A004343FF /* AFXMLRequestOperation.m in Sources */,
 				1F31A79C17313E3A004343FF /* UIImageView+AFNetworking.m in Sources */,
 				1F31A7A51731631A004343FF /* DKArticleViewController.m in Sources */,
+				1F12E5CE1732C55A00B55EB0 /* DKArticleTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +391,7 @@
 				1F31A77817312EDB004343FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
