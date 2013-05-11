@@ -9,7 +9,7 @@
             <objects>
                 <tableViewController id="u6E-b3-EnT" customClass="DKArticleTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="88" sectionHeaderHeight="22" sectionFooterHeight="22" id="oKw-5I-6UG">
-                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -22,31 +22,24 @@
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="I am the article title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riQ-Sw-yWi">
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="IFD-EV-JAE"/>
+                                                <constraint firstAttribute="height" constant="21" id="TlA-nB-kBs"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="how old" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ef-P6-2W2">
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="8N2-P0-ioQ"/>
-                                                <constraint firstAttribute="width" constant="107" id="vCs-8d-7Us"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" white="0.69260378649999998" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="url" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwp-WA-wWm">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="260" id="FX8-gr-Rfa"/>
                                                 <constraint firstAttribute="height" constant="21" id="S8m-fN-AVr"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" white="0.69260378649999998" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="points, comments" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2w-bF-itJ">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="points, comments" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2w-bF-itJ">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="ML8-8h-yeZ"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" white="0.69260378649999998" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -55,22 +48,20 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="A2w-bF-itJ" firstAttribute="baseline" secondItem="3Ef-P6-2W2" secondAttribute="baseline" type="default" id="Fcz-N1-XUM"/>
-                                    <constraint firstItem="3Ef-P6-2W2" firstAttribute="top" secondItem="rwp-WA-wWm" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="MZK-wX-bXE"/>
-                                    <constraint firstAttribute="trailing" secondItem="riQ-Sw-yWi" secondAttribute="trailing" constant="20" type="default" id="OaT-XB-5IN"/>
-                                    <constraint firstItem="riQ-Sw-yWi" firstAttribute="top" secondItem="bxp-4a-HUn" secondAttribute="top" constant="5" id="QQS-QQ-k4g"/>
-                                    <constraint firstItem="riQ-Sw-yWi" firstAttribute="leading" secondItem="bxp-4a-HUn" secondAttribute="leading" constant="20" type="default" id="THF-fx-hTV"/>
-                                    <constraint firstAttribute="trailing" secondItem="A2w-bF-itJ" secondAttribute="trailing" constant="20" type="default" id="cpJ-FC-Hah"/>
-                                    <constraint firstItem="3Ef-P6-2W2" firstAttribute="leading" secondItem="bxp-4a-HUn" secondAttribute="leading" constant="20" type="default" id="cxR-xm-EIr"/>
-                                    <constraint firstItem="A2w-bF-itJ" firstAttribute="top" secondItem="rwp-WA-wWm" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="d7q-rg-Yi8"/>
-                                    <constraint firstItem="rwp-WA-wWm" firstAttribute="top" secondItem="bxp-4a-HUn" secondAttribute="top" constant="33" id="rNu-AJ-DCS"/>
-                                    <constraint firstItem="rwp-WA-wWm" firstAttribute="leading" secondItem="bxp-4a-HUn" secondAttribute="leading" constant="20" type="default" id="ylT-lk-I5c"/>
+                                    <constraint firstAttribute="trailing" secondItem="riQ-Sw-yWi" secondAttribute="trailing" constant="40" type="user" id="7K9-RH-Dop"/>
+                                    <constraint firstItem="A2w-bF-itJ" firstAttribute="leading" secondItem="bxp-4a-HUn" secondAttribute="leading" constant="20" type="default" id="N0q-OB-Yi2"/>
+                                    <constraint firstItem="rwp-WA-wWm" firstAttribute="trailing" secondItem="riQ-Sw-yWi" secondAttribute="trailing" type="default" id="Q9Y-is-VMt"/>
+                                    <constraint firstItem="riQ-Sw-yWi" firstAttribute="leading" secondItem="bxp-4a-HUn" secondAttribute="leading" constant="20" type="user" id="THF-fx-hTV"/>
+                                    <constraint firstItem="A2w-bF-itJ" firstAttribute="top" secondItem="rwp-WA-wWm" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="WCd-zi-fds"/>
+                                    <constraint firstItem="rwp-WA-wWm" firstAttribute="trailing" secondItem="A2w-bF-itJ" secondAttribute="trailing" type="default" id="cAv-Tp-mZi"/>
+                                    <constraint firstItem="riQ-Sw-yWi" firstAttribute="top" secondItem="bxp-4a-HUn" secondAttribute="top" constant="4" id="gF8-Ff-xO4"/>
+                                    <constraint firstItem="rwp-WA-wWm" firstAttribute="top" secondItem="riQ-Sw-yWi" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="grA-fB-9ig"/>
+                                    <constraint firstItem="rwp-WA-wWm" firstAttribute="leading" secondItem="bxp-4a-HUn" secondAttribute="leading" constant="20" type="user" id="ylT-lk-I5c"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="articleAge" destination="3Ef-P6-2W2" id="z7X-mB-BmI"/>
-                                    <outlet property="articleComments" destination="A2w-bF-itJ" id="Hqh-sD-NqZ"/>
-                                    <outlet property="articleTitle" destination="riQ-Sw-yWi" id="xgS-DR-XO6"/>
-                                    <outlet property="articleUrl" destination="rwp-WA-wWm" id="Ky6-hE-2WK"/>
+                                    <outlet property="commentsLabel" destination="A2w-bF-itJ" id="0yH-fP-hZ9"/>
+                                    <outlet property="titleLabel" destination="riQ-Sw-yWi" id="ALl-NX-geR"/>
+                                    <outlet property="urlLabel" destination="rwp-WA-wWm" id="VIp-X2-m7A"/>
                                     <segue destination="UfE-3q-fSp" kind="push" identifier="Show Article" id="bS7-6L-OoC"/>
                                 </connections>
                             </tableViewCell>
@@ -87,7 +78,9 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="5Je-3x-js2"/>
-                        <barButtonItem title="Profile" style="plain" id="Cjw-Sg-2kh"/>
+                        <barButtonItem image="profile.png" style="plain" id="Cjw-Sg-2kh">
+                            <inset key="imageInsets" minX="8" minY="10" maxX="8" maxY="6"/>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="echojs" id="8St-hn-WCN"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -105,7 +98,7 @@
             <objects>
                 <viewController id="zAE-0w-d8K" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ndP-3k-zHR">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -119,7 +112,7 @@
             <objects>
                 <viewController id="UfE-3q-fSp" customClass="DKArticleViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D2d-zi-37Y">
-                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gww-PC-aKn">
@@ -157,12 +150,12 @@
             </objects>
             <point key="canvasLocation" x="1293" y="39"/>
         </scene>
-        <!--View Controller - Discuss-->
+        <!--View Controller - Comments-->
         <scene sceneID="xeu-Ox-yl0">
             <objects>
-                <viewController title="Discuss" id="uOp-nW-8AV" sceneMemberID="viewController">
+                <viewController title="Comments" id="uOp-nW-8AV" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="haG-2R-Dvv">
-                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -185,7 +178,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="avb-0J-JPy">
-                        <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.75294119120000003" green="0.1411764771" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.75294119120000003" green="0.1411764771" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -199,36 +192,12 @@
             <point key="canvasLocation" x="384" y="39"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="DKArticleTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DKArticleTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="articleAge" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="articleComments" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="articleTitle" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="articleUrl" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="articleUser" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DKArticleTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DKArticleTableViewController.h"/>
-        </class>
-        <class className="DKArticleViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DKArticleViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="articleWebView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="UIRefreshControl" superclassName="UIControl">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIRefreshControl.h"/>
-        </class>
-    </classes>
+    <resources>
+        <image name="profile.png" width="44" height="44"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
 </document>

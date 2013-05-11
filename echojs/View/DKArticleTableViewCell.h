@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface DKArticleTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *articleTitle;
-@property (weak, nonatomic) IBOutlet UILabel *articleUser;
-@property (weak, nonatomic) IBOutlet UILabel *articleUrl;
-@property (weak, nonatomic) IBOutlet UILabel *articleAge;
-@property (weak, nonatomic) IBOutlet UILabel *articleComments;
-
+@property (nonatomic, strong) NSString *articleTitle;
+@property (nonatomic, strong) NSString *articleUrl;
+@property (nonatomic) NSInteger articleUpvotes;
+@property (nonatomic) NSInteger articleDownvotes;
+@property (nonatomic) NSInteger articleComments;
+@property (nonatomic) NSInteger articleCreated;
 @end

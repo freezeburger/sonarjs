@@ -22,7 +22,7 @@
      }];
     
     
-    // [[UIBarButtonItem appearance] setBackButtonBackgroundImage:image forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+//    n[[UIBarButtonItem appearance] setBackButtonBackgroundImage:image forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
 //    [[UIBarItem appearance] setTitleTextAttributes:
 //     [NSDictionary dictionaryWithObjectsAndKeys:
