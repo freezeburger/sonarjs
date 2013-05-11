@@ -7,7 +7,7 @@
 //
 
 #import "DKArticleTableViewCell.h"
-#import "../NSDate-TimeAgo/NSDate+TimeAgo.h"
+#import "NSDate+TimeAgo.h"
 
 @interface DKArticleTableViewCell ()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;

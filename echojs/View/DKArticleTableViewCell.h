@@ -15,4 +15,5 @@
 @property (nonatomic) NSInteger articleDownvotes;
 @property (nonatomic) NSInteger articleComments;
 @property (nonatomic) NSInteger articleCreated;
+
 @end

@@ -104,7 +104,7 @@
 {
     static NSString *CellIdentifier = @"Article";
     DKArticleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
+        
     cell.articleTitle = [self.data[indexPath.item] objectForKey:@"title"];
     cell.articleUrl = [self.data[indexPath.item] objectForKey:@"url"];
     cell.articleUpvotes = [[self.data[indexPath.item] objectForKey:@"up"] integerValue];
@@ -114,5 +114,4 @@
     
     return cell;
 }
-
 @end
