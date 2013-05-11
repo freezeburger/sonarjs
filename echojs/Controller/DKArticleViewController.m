@@ -7,6 +7,7 @@
 //
 
 #import "DKArticleViewController.h"
+#import "DKCommentsTableViewController.h"
 
 @interface DKArticleViewController ()
 @property (weak, nonatomic) IBOutlet UIWebView *articleWebView;
@@ -45,6 +46,17 @@
     [self.articleWebView loadRequest:requestObj];
     
     self.title = self.articleTitle;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"Show Comments"]) {
+        if ([segue.destinationViewController isKindOfClass:[DKCommentsTableViewController class]]) {
+            DKCommentsTableViewController *destinationController = (DKCommentsTableViewController *)segue.destinationViewController;
+            destinationController.articleId = self.articleId;
+        }
+    }
+    
 }
 
 @end

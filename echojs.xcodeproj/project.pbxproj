@@ -32,6 +32,7 @@
 		1F8CE905173EAE5F0062B027 /* NSDateTimeAgo.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F8CE8ED173EAE5F0062B027 /* NSDateTimeAgo.strings */; };
 		1F8CE906173EAE5F0062B027 /* NSDate+TimeAgo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8CE8FA173EAE5F0062B027 /* NSDate+TimeAgo.m */; };
 		1F8CE907173EAE5F0062B027 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1F8CE8FB173EAE5F0062B027 /* README.md */; };
+		1F8CE90D173EB0190062B027 /* DKCommentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8CE90C173EB0190062B027 /* DKCommentsTableViewController.m */; };
 		1FD9AA6B173C3E67001EF429 /* profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FD9AA69173C3E67001EF429 /* profile@2x.png */; };
 		1FD9AA6C173C3E67001EF429 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FD9AA6A173C3E67001EF429 /* profile.png */; };
 /* End PBXBuildFile section */
@@ -90,6 +91,8 @@
 		1F8CE8F9173EAE5F0062B027 /* NSDate+TimeAgo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TimeAgo.h"; sourceTree = "<group>"; };
 		1F8CE8FA173EAE5F0062B027 /* NSDate+TimeAgo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TimeAgo.m"; sourceTree = "<group>"; };
 		1F8CE8FB173EAE5F0062B027 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		1F8CE90B173EB0190062B027 /* DKCommentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKCommentsTableViewController.h; path = Controller/DKCommentsTableViewController.h; sourceTree = "<group>"; };
+		1F8CE90C173EB0190062B027 /* DKCommentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKCommentsTableViewController.m; path = Controller/DKCommentsTableViewController.m; sourceTree = "<group>"; };
 		1FD9AA69173C3E67001EF429 /* profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile@2x.png"; sourceTree = "<group>"; };
 		1FD9AA6A173C3E67001EF429 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -181,6 +184,8 @@
 				1F31A7A41731631A004343FF /* DKArticleViewController.m */,
 				1F31A77D17313036004343FF /* DKArticleTableViewController.h */,
 				1F31A77E17313036004343FF /* DKArticleTableViewController.m */,
+				1F8CE90B173EB0190062B027 /* DKCommentsTableViewController.h */,
+				1F8CE90C173EB0190062B027 /* DKCommentsTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -337,6 +342,7 @@
 				1F8CE903173EAE5F0062B027 /* AFXMLRequestOperation.m in Sources */,
 				1F8CE904173EAE5F0062B027 /* UIImageView+AFNetworking.m in Sources */,
 				1F8CE906173EAE5F0062B027 /* NSDate+TimeAgo.m in Sources */,
+				1F8CE90D173EB0190062B027 /* DKCommentsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

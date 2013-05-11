@@ -68,7 +68,7 @@
     [self.refreshControl beginRefreshing];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
-    dispatch_queue_t q = dispatch_queue_create("one", NULL); // serial
+    dispatch_queue_t q = dispatch_queue_create("articles", NULL); // serial
     dispatch_async(q, ^{
         
         NSURL *url = [NSURL URLWithString:@"http://www.echojs.com/api/getnews/top/0/30"];
