@@ -7,7 +7,7 @@
 //
 
 #import "DKArticleViewController.h"
-#import "DKCommentsTableViewController.h"
+#import "DKCommentsCollectionViewController.h"
 
 @interface DKArticleViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *commentsButton;
@@ -65,8 +65,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"Show Comments"]) {
-        if ([segue.destinationViewController isKindOfClass:[DKCommentsTableViewController class]]) {
-            DKCommentsTableViewController *destinationController = (DKCommentsTableViewController *)segue.destinationViewController;
+        if ([segue.destinationViewController isKindOfClass:[DKCommentsCollectionViewController class]]) {
+            DKCommentsCollectionViewController *destinationController = (DKCommentsCollectionViewController *)segue.destinationViewController;
+            
             destinationController.articleId = self.articleId;
         }
     }
