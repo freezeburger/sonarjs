@@ -12,4 +12,5 @@
 @property (nonatomic, strong) NSString *articleTitle;
 @property (nonatomic, strong) NSString *articleUrl;
 @property (nonatomic) NSInteger articleId;
+@property (nonatomic) NSInteger articleComments;
 @end

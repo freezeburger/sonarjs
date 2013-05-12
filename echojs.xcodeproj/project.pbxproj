@@ -33,6 +33,13 @@
 		1F8CE906173EAE5F0062B027 /* NSDate+TimeAgo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8CE8FA173EAE5F0062B027 /* NSDate+TimeAgo.m */; };
 		1F8CE907173EAE5F0062B027 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1F8CE8FB173EAE5F0062B027 /* README.md */; };
 		1F8CE90D173EB0190062B027 /* DKCommentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8CE90C173EB0190062B027 /* DKCommentsTableViewController.m */; };
+		1F8CE910173EDF1C0062B027 /* comments.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8CE90E173EDF1C0062B027 /* comments.png */; };
+		1F8CE911173EDF1C0062B027 /* comments@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8CE90F173EDF1C0062B027 /* comments@2x.png */; };
+		1F8CE914173EE6470062B027 /* DKCommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8CE913173EE6470062B027 /* DKCommentTableViewCell.m */; };
+		1F8CE917173F7A2E0062B027 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8CE915173F7A2E0062B027 /* icon.png */; };
+		1F8CE918173F7A2E0062B027 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8CE916173F7A2E0062B027 /* icon@2x.png */; };
+		1F8CE91E173F7BE10062B027 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8CE91D173F7BE10062B027 /* icon@2x.png */; };
+		1F8CE920173F7BE60062B027 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8CE91F173F7BE60062B027 /* icon.png */; };
 		1FD9AA6B173C3E67001EF429 /* profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FD9AA69173C3E67001EF429 /* profile@2x.png */; };
 		1FD9AA6C173C3E67001EF429 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FD9AA6A173C3E67001EF429 /* profile.png */; };
 /* End PBXBuildFile section */
@@ -93,6 +100,14 @@
 		1F8CE8FB173EAE5F0062B027 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		1F8CE90B173EB0190062B027 /* DKCommentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKCommentsTableViewController.h; path = Controller/DKCommentsTableViewController.h; sourceTree = "<group>"; };
 		1F8CE90C173EB0190062B027 /* DKCommentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKCommentsTableViewController.m; path = Controller/DKCommentsTableViewController.m; sourceTree = "<group>"; };
+		1F8CE90E173EDF1C0062B027 /* comments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comments.png; sourceTree = "<group>"; };
+		1F8CE90F173EDF1C0062B027 /* comments@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "comments@2x.png"; sourceTree = "<group>"; };
+		1F8CE912173EE6470062B027 /* DKCommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKCommentTableViewCell.h; path = View/DKCommentTableViewCell.h; sourceTree = "<group>"; };
+		1F8CE913173EE6470062B027 /* DKCommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKCommentTableViewCell.m; path = View/DKCommentTableViewCell.m; sourceTree = "<group>"; };
+		1F8CE915173F7A2E0062B027 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		1F8CE916173F7A2E0062B027 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		1F8CE91D173F7BE10062B027 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		1F8CE91F173F7BE60062B027 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		1FD9AA69173C3E67001EF429 /* profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile@2x.png"; sourceTree = "<group>"; };
 		1FD9AA6A173C3E67001EF429 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +131,8 @@
 			children = (
 				1F12E5CC1732C55A00B55EB0 /* DKArticleTableViewCell.h */,
 				1F12E5CD1732C55A00B55EB0 /* DKArticleTableViewCell.m */,
+				1F8CE912173EE6470062B027 /* DKCommentTableViewCell.h */,
+				1F8CE913173EE6470062B027 /* DKCommentTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -123,6 +140,8 @@
 		1F31A74A17312EDB004343FF = {
 			isa = PBXGroup;
 			children = (
+				1F8CE91F173F7BE60062B027 /* icon.png */,
+				1F8CE91D173F7BE10062B027 /* icon@2x.png */,
 				1F31A75C17312EDB004343FF /* echojs */,
 				1F31A75517312EDB004343FF /* Frameworks */,
 				1F31A75417312EDB004343FF /* Products */,
@@ -162,6 +181,10 @@
 		1F31A75D17312EDB004343FF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1F8CE915173F7A2E0062B027 /* icon.png */,
+				1F8CE916173F7A2E0062B027 /* icon@2x.png */,
+				1F8CE90E173EDF1C0062B027 /* comments.png */,
+				1F8CE90F173EDF1C0062B027 /* comments@2x.png */,
 				1F31A76517312EDB004343FF /* DKAppDelegate.h */,
 				1F31A76617312EDB004343FF /* DKAppDelegate.m */,
 				1FD9AA69173C3E67001EF429 /* profile@2x.png */,
@@ -317,6 +340,12 @@
 				1FD9AA6C173C3E67001EF429 /* profile.png in Resources */,
 				1F8CE905173EAE5F0062B027 /* NSDateTimeAgo.strings in Resources */,
 				1F8CE907173EAE5F0062B027 /* README.md in Resources */,
+				1F8CE910173EDF1C0062B027 /* comments.png in Resources */,
+				1F8CE911173EDF1C0062B027 /* comments@2x.png in Resources */,
+				1F8CE917173F7A2E0062B027 /* icon.png in Resources */,
+				1F8CE918173F7A2E0062B027 /* icon@2x.png in Resources */,
+				1F8CE91E173F7BE10062B027 /* icon@2x.png in Resources */,
+				1F8CE920173F7BE60062B027 /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +372,7 @@
 				1F8CE904173EAE5F0062B027 /* UIImageView+AFNetworking.m in Sources */,
 				1F8CE906173EAE5F0062B027 /* NSDate+TimeAgo.m in Sources */,
 				1F8CE90D173EB0190062B027 /* DKCommentsTableViewController.m in Sources */,
+				1F8CE914173EE6470062B027 /* DKCommentTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

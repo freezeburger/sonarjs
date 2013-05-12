@@ -10,6 +10,7 @@
 #import "DKCommentsTableViewController.h"
 
 @interface DKArticleViewController ()
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *commentsButton;
 @property (weak, nonatomic) IBOutlet UIWebView *articleWebView;
 @end
 
@@ -33,6 +34,12 @@
     [self updateUI];
 }
 
+- (void)setArticleComments:(NSInteger)articleComments
+{
+    _articleComments = articleComments;
+    [self updateUI];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -46,6 +53,13 @@
     [self.articleWebView loadRequest:requestObj];
     
     self.title = self.articleTitle;
+    
+    // hide comments button, if there are no comments, show it otherwise
+    if (!self.articleComments) {
+        self.commentsButton.enabled = NO;
+    } else {
+        self.commentsButton.enabled = YES;
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

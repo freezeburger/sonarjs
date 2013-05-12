@@ -8,6 +8,7 @@
 
 #import "DKCommentsTableViewController.h"
 #import "AFNetworking.h"
+#import "DKCommentTableViewCell.h"
 
 @interface DKCommentsTableViewController ()
 @property (strong, nonatomic) NSMutableArray *data;
@@ -40,6 +41,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     [self loadData];
     [self updateUI];
 }
@@ -88,9 +90,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Comment";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    DKCommentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.textLabel.text = [self.data[indexPath.item] objectForKey:@"body"];
+    cell.comment = [self.data[indexPath.item] objectForKey:@"body"];
+    [cell sizeToFit];
     
     return cell;
 }

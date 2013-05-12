@@ -43,6 +43,7 @@
             destinationController.articleTitle = [self.data[selectedRowindexPath.row] objectForKey:@"title"];
             destinationController.articleUrl = [self.data[selectedRowindexPath.row] objectForKey:@"url"];
             destinationController.articleId = [[self.data[selectedRowindexPath.row] objectForKey:@"id"] integerValue];
+            destinationController.articleComments = [[self.data[selectedRowindexPath.row] objectForKey:@"comments"] integerValue];
         }
     }
 }
@@ -50,7 +51,7 @@
 #pragma mark - Helper
 
 - (void)updateUI
-{
+{    
     // complete reload, should be changed later to higher performance
     [self.tableView reloadData];
 }
