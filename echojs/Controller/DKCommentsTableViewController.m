@@ -93,9 +93,10 @@
     DKCommentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     cell.comment = [self.data[indexPath.item] objectForKey:@"body"];
-    [cell sizeToFit];
     
     return cell;
 }
+
+
 
 @end

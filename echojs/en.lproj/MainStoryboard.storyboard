@@ -205,15 +205,32 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Comment" id="x9d-U1-TyA">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Comment" id="x9d-U1-TyA" customClass="DKCommentCollectionViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fff-9z-pAe">
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="fff-9z-pAe" firstAttribute="top" secondItem="x9d-U1-TyA" secondAttribute="top" type="default" id="DFJ-LP-PyV"/>
+                                    <constraint firstItem="fff-9z-pAe" firstAttribute="trailing" secondItem="x9d-U1-TyA" secondAttribute="trailing" type="default" id="PMW-H0-pma"/>
+                                    <constraint firstItem="fff-9z-pAe" firstAttribute="leading" secondItem="x9d-U1-TyA" secondAttribute="leading" type="default" id="XQs-mX-scM"/>
+                                    <constraint firstItem="fff-9z-pAe" firstAttribute="bottom" secondItem="x9d-U1-TyA" secondAttribute="bottom" type="default" id="n75-6F-Lj8"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="textView" destination="fff-9z-pAe" id="lpl-uq-ew7"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -270,6 +287,12 @@
             <relationships>
                 <relationship kind="outlet" name="articleWebView" candidateClass="UIWebView"/>
                 <relationship kind="outlet" name="commentsButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="DKCommentCollectionViewCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DKCommentCollectionViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
             </relationships>
         </class>
         <class className="DKCommentTableViewCell" superclassName="UITableViewCell">

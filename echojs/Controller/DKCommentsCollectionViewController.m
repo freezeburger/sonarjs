@@ -8,6 +8,7 @@
 
 #import "DKCommentsCollectionViewController.h"
 #import "AFNetworking.h"
+#import "DKCommentCollectionViewCell.h"
 
 @interface DKCommentsCollectionViewController ()
 @property (strong, nonatomic) NSMutableArray *data;
@@ -19,7 +20,6 @@
 
 - (void)setArticleId:(NSInteger)articleId
 {
-    NSLog(@"%d", articleId);
     _articleId = articleId;
     [self updateUI];
 }
@@ -84,9 +84,10 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Comment" forIndexPath:(NSIndexPath*)indexPath];
+    DKCommentCollectionViewCell *cell = (DKCommentCollectionViewCell *) [collectionView dequeueReusableCellWithReuseIdentifier:@"Comment" forIndexPath:(NSIndexPath*)indexPath];
     
     // configure cell
+    cell.comment = [self.data[indexPath.item] objectForKey:@"body"];
     
     return cell;
 }
