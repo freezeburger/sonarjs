@@ -124,7 +124,6 @@
                     <navigationItem key="navigationItem" title="article" id="fxI-zU-Qr1">
                         <barButtonItem key="backBarButtonItem" title="back" id="Yc3-8R-qFe"/>
                         <barButtonItem key="rightBarButtonItem" image="comments.png" style="plain" id="Frd-dx-3XV">
-                            <inset key="imageInsets" minX="12" minY="8" maxX="12" maxY="8"/>
                             <connections>
                                 <segue destination="e0h-rE-Z09" kind="push" identifier="Show Comments" id="MsJ-W7-gjk"/>
                             </connections>
@@ -305,7 +304,7 @@
     </scenes>
     <resources>
         <image name="comments.png" width="44" height="44"/>
-        <image name="profile.png" width="44" height="44"/>
+        <image name="profile.png" width="31" height="31"/>
     </resources>
     <classes>
         <class className="DKArticleTableViewCell" superclassName="UITableViewCell">
@@ -366,9 +365,6 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
         <class className="UIRefreshControl" superclassName="UIControl">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UIRefreshControl.h"/>
