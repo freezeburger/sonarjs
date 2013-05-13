@@ -7,11 +7,14 @@
 //
 
 #import "DKArticleViewController.h"
+#import "DKCommentsViewController.h"
 #import "DKCommentsCollectionViewController.h"
+#import "DKCommentsTableViewController.h"
 
-@interface DKArticleViewController ()
+@interface DKArticleViewController () <UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *commentsButton;
 @property (weak, nonatomic) IBOutlet UIWebView *articleWebView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 @end
 
 @implementation DKArticleViewController
@@ -43,6 +46,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.articleWebView.delegate = self;
+    
 	[self updateUI];
 }
 
@@ -65,13 +71,37 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"Show Comments"]) {
+        if ([segue.destinationViewController isKindOfClass:[DKCommentsViewController class]]) {
+            DKCommentsViewController *destinationController = (DKCommentsViewController *)segue.destinationViewController;
+            
+            destinationController.articleId = self.articleId;
+        }
         if ([segue.destinationViewController isKindOfClass:[DKCommentsCollectionViewController class]]) {
             DKCommentsCollectionViewController *destinationController = (DKCommentsCollectionViewController *)segue.destinationViewController;
             
             destinationController.articleId = self.articleId;
         }
+        if ([segue.destinationViewController isKindOfClass:[DKCommentsTableViewController class]]) {
+            DKCommentsTableViewController *destinationController = (DKCommentsTableViewController *)segue.destinationViewController;
+            
+            destinationController.articleId = self.articleId;
+        }
     }
     
+}
+
+#pragma mark - Webview delegate
+
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    [self.spinner startAnimating];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [self.spinner stopAnimating];
 }
 
 @end

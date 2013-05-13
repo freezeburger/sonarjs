@@ -22,6 +22,7 @@
 		1F31A7A51731631A004343FF /* DKArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F31A7A41731631A004343FF /* DKArticleViewController.m */; };
 		1F6B9B28173FA16600CEB9EB /* DKCommentsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6B9B27173FA16600CEB9EB /* DKCommentsCollectionViewController.m */; };
 		1F6B9B2B173FA54200CEB9EB /* DKCommentCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6B9B2A173FA54200CEB9EB /* DKCommentCollectionViewCell.m */; };
+		1F6B9B2E173FABD900CEB9EB /* DKCommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6B9B2D173FABD900CEB9EB /* DKCommentsViewController.m */; };
 		1F8CE8FC173EAE5F0062B027 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8CE8D9173EAE5F0062B027 /* AFHTTPClient.m */; };
 		1F8CE8FD173EAE5F0062B027 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8CE8DB173EAE5F0062B027 /* AFHTTPRequestOperation.m */; };
 		1F8CE8FE173EAE5F0062B027 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8CE8DD173EAE5F0062B027 /* AFImageRequestOperation.m */; };
@@ -69,6 +70,8 @@
 		1F6B9B27173FA16600CEB9EB /* DKCommentsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKCommentsCollectionViewController.m; path = Controller/DKCommentsCollectionViewController.m; sourceTree = "<group>"; };
 		1F6B9B29173FA54200CEB9EB /* DKCommentCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKCommentCollectionViewCell.h; path = View/DKCommentCollectionViewCell.h; sourceTree = "<group>"; };
 		1F6B9B2A173FA54200CEB9EB /* DKCommentCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKCommentCollectionViewCell.m; path = View/DKCommentCollectionViewCell.m; sourceTree = "<group>"; };
+		1F6B9B2C173FABD900CEB9EB /* DKCommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKCommentsViewController.h; path = Controller/DKCommentsViewController.h; sourceTree = "<group>"; };
+		1F6B9B2D173FABD900CEB9EB /* DKCommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKCommentsViewController.m; path = Controller/DKCommentsViewController.m; sourceTree = "<group>"; };
 		1F8CE8D8173EAE5F0062B027 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		1F8CE8D9173EAE5F0062B027 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		1F8CE8DA173EAE5F0062B027 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -209,6 +212,8 @@
 				1F31A77E17313036004343FF /* DKArticleTableViewController.m */,
 				1F31A7A31731631A004343FF /* DKArticleViewController.h */,
 				1F31A7A41731631A004343FF /* DKArticleViewController.m */,
+				1F6B9B2C173FABD900CEB9EB /* DKCommentsViewController.h */,
+				1F6B9B2D173FABD900CEB9EB /* DKCommentsViewController.m */,
 				1F6B9B26173FA16600CEB9EB /* DKCommentsCollectionViewController.h */,
 				1F6B9B27173FA16600CEB9EB /* DKCommentsCollectionViewController.m */,
 				1F8CE90B173EB0190062B027 /* DKCommentsTableViewController.h */,
@@ -377,6 +382,7 @@
 				1F8CE914173EE6470062B027 /* DKCommentTableViewCell.m in Sources */,
 				1F6B9B28173FA16600CEB9EB /* DKCommentsCollectionViewController.m in Sources */,
 				1F6B9B2B173FA54200CEB9EB /* DKCommentCollectionViewCell.m in Sources */,
+				1F6B9B2E173FABD900CEB9EB /* DKCommentsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
