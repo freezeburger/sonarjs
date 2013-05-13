@@ -124,7 +124,7 @@
                     <navigationItem key="navigationItem" title="article" id="fxI-zU-Qr1">
                         <barButtonItem key="backBarButtonItem" title="back" id="Yc3-8R-qFe"/>
                         <barButtonItem key="rightBarButtonItem" image="comments.png" style="plain" id="Frd-dx-3XV">
-                            <inset key="imageInsets" minX="10" minY="4" maxX="12" maxY="4"/>
+                            <inset key="imageInsets" minX="12" minY="8" maxX="12" maxY="8"/>
                             <connections>
                                 <segue destination="e0h-rE-Z09" kind="push" identifier="Show Comments" id="MsJ-W7-gjk"/>
                             </connections>
