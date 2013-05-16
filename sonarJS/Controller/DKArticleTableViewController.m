@@ -10,6 +10,8 @@
 #import "DKArticleViewController.h"
 #import "DKArticleTableViewCell.h"
 #import "AFNetworking.h"
+#import "UINavigationBar+FlatUI.h"
+#import "UIBarButtonItem+FlatUI.h"
 
 @interface DKArticleTableViewController ()
 @property (strong, nonatomic) NSMutableArray *data;
@@ -29,6 +31,8 @@
                   forControlEvents:UIControlEventValueChanged];
     
     [self loadData];
+    
+    [self configureFlatUI];
     [self updateUI];
 }
 
@@ -49,6 +53,17 @@
 }
 
 #pragma mark - Helper
+
+- (void)configureFlatUI
+{
+    UIColor *redColor  = [UIColor colorWithRed:0.73f green:0.09f blue:0.00f alpha:1.00f];
+    UIColor *flatDark  = [UIColor colorWithRed:0.75f green:0.22f blue:0.17f alpha:1.00f];
+    UIColor *flatLight = [UIColor colorWithRed:0.91f green:0.30f blue:0.24f alpha:1.00f];
+    [self.navigationController.navigationBar configureFlatNavigationBarWithColor:redColor];
+    [UIBarButtonItem configureFlatButtonsWithColor:flatDark
+                                  highlightedColor:flatLight
+                                      cornerRadius:3];
+}
 
 - (void)updateUI
 {    

@@ -80,7 +80,9 @@
                             <inset key="imageInsets" minX="8" minY="10" maxX="8" maxY="6"/>
                         </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="sonarJS" id="8St-hn-WCN"/>
+                    <navigationItem key="navigationItem" title="sonarJS" id="8St-hn-WCN">
+                        <barButtonItem key="backBarButtonItem" title="back" id="qeT-lg-9Gq"/>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="whV-06-qch">
                         <autoresizingMask key="autoresizingMask"/>
@@ -365,6 +367,9 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
         <class className="UIRefreshControl" superclassName="UIControl">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UIRefreshControl.h"/>

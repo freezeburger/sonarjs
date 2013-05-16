@@ -59,13 +59,6 @@
     [self.articleWebView loadRequest:requestObj];
     
     self.title = self.articleTitle;
-    
-    // hide comments button, if there are no comments, show it otherwise
-    if (!self.articleComments) {
-        self.commentsButton.enabled = NO;
-    } else {
-        self.commentsButton.enabled = YES;
-    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
