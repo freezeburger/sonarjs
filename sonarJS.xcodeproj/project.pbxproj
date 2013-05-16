@@ -19,9 +19,6 @@
 		1F54036D17429A9C00388083 /* DKCommentsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F54032917429A9C00388083 /* DKCommentsCollectionViewController.m */; };
 		1F54036E17429A9C00388083 /* DKCommentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F54032B17429A9C00388083 /* DKCommentsTableViewController.m */; };
 		1F54036F17429A9C00388083 /* DKCommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F54032D17429A9C00388083 /* DKCommentsViewController.m */; };
-		1F54037017429A9C00388083 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F54032E17429A9C00388083 /* Default-568h@2x.png */; };
-		1F54037117429A9C00388083 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F54032F17429A9C00388083 /* Default.png */; };
-		1F54037217429A9C00388083 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F54033017429A9C00388083 /* Default@2x.png */; };
 		1F54037317429A9C00388083 /* DKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F54033217429A9C00388083 /* DKAppDelegate.m */; };
 		1F54037417429A9C00388083 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F54033317429A9C00388083 /* InfoPlist.strings */; };
 		1F54037517429A9C00388083 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F54033517429A9C00388083 /* MainStoryboard.storyboard */; };
@@ -69,9 +66,6 @@
 		1F54032B17429A9C00388083 /* DKCommentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCommentsTableViewController.m; sourceTree = "<group>"; };
 		1F54032C17429A9C00388083 /* DKCommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCommentsViewController.h; sourceTree = "<group>"; };
 		1F54032D17429A9C00388083 /* DKCommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCommentsViewController.m; sourceTree = "<group>"; };
-		1F54032E17429A9C00388083 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		1F54032F17429A9C00388083 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		1F54033017429A9C00388083 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		1F54033117429A9C00388083 /* DKAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKAppDelegate.h; sourceTree = "<group>"; };
 		1F54033217429A9C00388083 /* DKAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKAppDelegate.m; sourceTree = "<group>"; };
 		1F54033417429A9C00388083 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -183,9 +177,6 @@
 				1F54032117429A9C00388083 /* comments.png */,
 				1F54032217429A9C00388083 /* comments@2x.png */,
 				1F54032317429A9C00388083 /* Controller */,
-				1F54032E17429A9C00388083 /* Default-568h@2x.png */,
-				1F54032F17429A9C00388083 /* Default.png */,
-				1F54033017429A9C00388083 /* Default@2x.png */,
 				1F54033117429A9C00388083 /* DKAppDelegate.h */,
 				1F54033217429A9C00388083 /* DKAppDelegate.m */,
 				1F54033317429A9C00388083 /* InfoPlist.strings */,
@@ -351,9 +342,6 @@
 				1F8CE920173F7BE60062B027 /* icon.png in Resources */,
 				1F54036917429A9C00388083 /* comments.png in Resources */,
 				1F54036A17429A9C00388083 /* comments@2x.png in Resources */,
-				1F54037017429A9C00388083 /* Default-568h@2x.png in Resources */,
-				1F54037117429A9C00388083 /* Default.png in Resources */,
-				1F54037217429A9C00388083 /* Default@2x.png in Resources */,
 				1F54037417429A9C00388083 /* InfoPlist.strings in Resources */,
 				1F54037517429A9C00388083 /* MainStoryboard.storyboard in Resources */,
 				1F54037F17429A9C00388083 /* NSDateTimeAgo.strings in Resources */,
