@@ -30,9 +30,10 @@
     [self configureCustomUI];
     
     // ios bug: we have to chain the target / action in code
-    [self.refreshControl addTarget:self action:@selector(handlePullToRefresh) forControlEvents:UIControlEventValueChanged];
+    [self.refreshControl addTarget:self action:@selector(handlePullToRefresh:) forControlEvents:UIControlEventValueChanged];
     
-    [self loadData];
+    // initially load data
+    [self handleRefreshButton:nil];
 }
 
 
@@ -86,9 +87,31 @@
     }
 }
 
-- (IBAction)handlePullToRefresh
+- (IBAction)handleRefreshButton:(id)sender {
+    [[UIApplication sharedApplication] showNetworkActivityIndicator];
+    
+    [self.echoJS retrieveArticlesOrderedBy:DKEchoJSOrderModeTop startingAtIndex:DK_ARTICLE_START_INDEX withCount:DK_ARTICLE_PAGE_COUNT success:^(id articles){
+        self.data = articles; // this will update the ui, so we need to call it here!!
+
+        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+        
+        [[UIApplication sharedApplication] hideNetworkActivityIndicator];
+    }];
+
+}
+
+- (IBAction)handlePullToRefresh:(id)sender
 {
-    [self loadData];
+    [self.refreshControl beginRefreshing];
+    [[UIApplication sharedApplication] showNetworkActivityIndicator];
+    
+    [self.echoJS retrieveArticlesOrderedBy:DKEchoJSOrderModeTop startingAtIndex:DK_ARTICLE_START_INDEX withCount:DK_ARTICLE_PAGE_COUNT success:^(id articles){
+        self.data = articles; // this will update the ui, so we need to call it here!!
+        
+        [self.refreshControl endRefreshing];
+    
+        [[UIApplication sharedApplication] hideNetworkActivityIndicator];
+    }];
 }
 
 
@@ -113,27 +136,6 @@
     cell.articleCreated = [[self.data[indexPath.item] objectForKey:@"ctime"] integerValue];
     
     return cell;
-}
-
-
-
-#pragma mark - Helpers
-
-- (IBAction)loadData
-{
-    [self.refreshControl beginRefreshing];
-    [[UIApplication sharedApplication] showNetworkActivityIndicator];
-    
-    [self.echoJS retrieveArticlesOrderedBy:DKEchoJSOrderModeTop startingAtIndex:DK_ARTICLE_START_INDEX withCount:DK_ARTICLE_PAGE_COUNT success:^(id articles){
-        // this will update the ui, so we need to call it here!!
-        self.data = articles;
-        
-        // all ui kit related code most go here, because it is NOT threadsave
-        [self.refreshControl endRefreshing];
-        
-        [[UIApplication sharedApplication] hideNetworkActivityIndicator];
-        
-    }];
 }
 
 @end
