@@ -8,17 +8,17 @@
         <scene sceneID="8ok-wc-n4I">
             <objects>
                 <tableViewController id="u6E-b3-EnT" customClass="DKArticleTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="84" sectionHeaderHeight="22" sectionFooterHeight="22" id="oKw-5I-6UG">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="oKw-5I-6UG">
                         <rect key="frame" x="0.0" y="64" width="320" height="372"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Article" id="bxp-4a-HUn" customClass="DKArticleTableViewCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="84"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="83"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="I am the article title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riQ-Sw-yWi">
@@ -51,13 +51,13 @@
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="rwp-WA-wWm" firstAttribute="centerY" secondItem="bxp-4a-HUn" secondAttribute="centerY" type="default" id="0rK-6U-cIf"/>
-                                    <constraint firstAttribute="bottom" secondItem="A2w-bF-itJ" secondAttribute="bottom" constant="13" id="1bS-F2-tM3"/>
                                     <constraint firstAttribute="trailing" secondItem="riQ-Sw-yWi" secondAttribute="trailing" constant="40" type="user" id="7K9-RH-Dop"/>
                                     <constraint firstItem="A2w-bF-itJ" firstAttribute="leading" secondItem="bxp-4a-HUn" secondAttribute="leading" constant="20" type="default" id="N0q-OB-Yi2"/>
                                     <constraint firstItem="rwp-WA-wWm" firstAttribute="trailing" secondItem="riQ-Sw-yWi" secondAttribute="trailing" type="default" id="Q9Y-is-VMt"/>
+                                    <constraint firstAttribute="bottom" secondItem="A2w-bF-itJ" secondAttribute="bottom" constant="11" id="QRy-uk-8O9"/>
                                     <constraint firstItem="riQ-Sw-yWi" firstAttribute="leading" secondItem="bxp-4a-HUn" secondAttribute="leading" constant="20" type="user" id="THF-fx-hTV"/>
-                                    <constraint firstItem="riQ-Sw-yWi" firstAttribute="top" secondItem="bxp-4a-HUn" secondAttribute="top" constant="11" id="c05-Sh-k3z"/>
                                     <constraint firstItem="rwp-WA-wWm" firstAttribute="trailing" secondItem="A2w-bF-itJ" secondAttribute="trailing" type="default" id="cAv-Tp-mZi"/>
+                                    <constraint firstItem="riQ-Sw-yWi" firstAttribute="top" secondItem="bxp-4a-HUn" secondAttribute="top" constant="8" id="leX-rx-11v"/>
                                     <constraint firstItem="rwp-WA-wWm" firstAttribute="leading" secondItem="bxp-4a-HUn" secondAttribute="leading" constant="20" type="user" id="ylT-lk-I5c"/>
                                 </constraints>
                                 <connections>
@@ -81,7 +81,7 @@
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="sonarJS" id="8St-hn-WCN">
-                        <barButtonItem key="backBarButtonItem" title="back" id="qeT-lg-9Gq"/>
+                        <barButtonItem key="backBarButtonItem" title="＜" id="qeT-lg-9Gq"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="whV-06-qch">
@@ -124,7 +124,7 @@
                         <barButtonItem title="▼" style="plain" id="X9T-I6-yF4"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="article" id="fxI-zU-Qr1">
-                        <barButtonItem key="backBarButtonItem" title="back" id="Yc3-8R-qFe"/>
+                        <barButtonItem key="backBarButtonItem" title="＜" id="Yc3-8R-qFe"/>
                         <barButtonItem key="rightBarButtonItem" image="comments.png" id="Frd-dx-3XV">
                             <connections>
                                 <segue destination="e0h-rE-Z09" kind="push" identifier="Show Comments" id="MsJ-W7-gjk"/>

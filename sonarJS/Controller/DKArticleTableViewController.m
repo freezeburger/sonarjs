@@ -12,6 +12,7 @@
 #import "DKEchoJS.h"
 #import "UINavigationBar+FlatUI.h"
 #import "UIBarButtonItem+FlatUI.h"
+#import "UIFont+FlatUI.h"
 
 #define DK_ARTICLE_START_INDEX 0
 #define DK_ARTICLE_PAGE_COUNT 30
@@ -60,10 +61,14 @@
 - (void)configureFlatUI
 {
     UIColor *redColor  = [UIColor colorWithRed:0.73f green:0.09f blue:0.00f alpha:1.00f];
-    UIColor *flatDark  = [UIColor colorWithRed:0.75f green:0.22f blue:0.17f alpha:1.00f];
-    UIColor *flatLight = [UIColor colorWithRed:0.91f green:0.30f blue:0.24f alpha:1.00f];
+    UIColor *reallyDark  = [UIColor colorWithRed:0.34f green:0.04f blue:0.00f alpha:1.00f];
+    UIColor *darkRedColor = [UIColor colorWithRed:0.64f green:0.08f blue:0.00f alpha:1.00f];
     [self.navigationController.navigationBar configureFlatNavigationBarWithColor:redColor];
-    [UIBarButtonItem configureFlatButtonsWithColor:flatDark highlightedColor:flatLight cornerRadius:3];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{
+                                     UITextAttributeTextShadowColor: redColor
+     }];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{UITextAttributeTextShadowColor: redColor} forState:UIControlStateNormal];
+    [UIBarButtonItem configureFlatButtonsWithColor:darkRedColor highlightedColor:reallyDark cornerRadius:3];
     [self.tableView setContentInset:UIEdgeInsetsMake(10,0,10,0)];
 }
 
