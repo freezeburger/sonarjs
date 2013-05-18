@@ -9,12 +9,16 @@
 #import "DKArticleTableViewController.h"
 #import "DKArticleViewController.h"
 #import "DKArticleTableViewCell.h"
-#import "AFNetworking.h"
+#import "DKEchoJS.h"
 #import "UINavigationBar+FlatUI.h"
 #import "UIBarButtonItem+FlatUI.h"
 
+#define DK_ARTICLE_START_INDEX 0
+#define DK_ARTICLE_PAGE_COUNT 30
+
 @interface DKArticleTableViewController ()
 @property (strong, nonatomic) NSMutableArray *data;
+@property (strong, nonatomic) DKEchoJS *echoJS;
 @end
 
 @implementation DKArticleTableViewController
@@ -41,6 +45,12 @@
 {
     _data = data;
     [self updateUI];
+}
+
+- (DKEchoJS *)echoJS
+{
+    if (!_echoJS) _echoJS = [[DKEchoJS alloc] init];
+    return _echoJS;
 }
 
 
@@ -120,29 +130,18 @@
     [self.refreshControl beginRefreshing];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
-    dispatch_queue_t q = dispatch_queue_create("articles", NULL); // serial
-    dispatch_async(q, ^{
+    [self.echoJS retrieveArticlesOrderedBy:DKEchoJSOrderModeTop startingAtIndex:DK_ARTICLE_START_INDEX withCount:DK_ARTICLE_PAGE_COUNT success:^(id articles){
+        // this will update the ui, so we need to call it here!!
+        self.data = articles;
         
-        NSURL *url = [NSURL URLWithString:@"http://www.echojs.com/api/getnews/top/0/30"];
-        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        // all ui kit related code most go here, because it is NOT threadsave
+        [self.refreshControl endRefreshing];
         
-        AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                
-                // this will update the ui, so we need to call it here!!
-                self.data = [JSON valueForKeyPath:@"news"];
-                
-                // all ui kit related code most go here, because it is NOT threadsave
-                [self.refreshControl endRefreshing];
-                
-                // this spinner is global so basically we would need a kind of reference counting
-                // whether things are going right now or not!
-                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-            });
-        } failure:nil];
+        // this spinner is global so basically we would need a kind of reference counting
+        // whether things are going right now or not!
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         
-        [operation start];
-    });
+    }];
 }
 
 @end
