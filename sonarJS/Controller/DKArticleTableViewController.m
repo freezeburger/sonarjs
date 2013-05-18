@@ -64,6 +64,7 @@
     UIColor *flatLight = [UIColor colorWithRed:0.91f green:0.30f blue:0.24f alpha:1.00f];
     [self.navigationController.navigationBar configureFlatNavigationBarWithColor:redColor];
     [UIBarButtonItem configureFlatButtonsWithColor:flatDark highlightedColor:flatLight cornerRadius:3];
+    [self.tableView setContentInset:UIEdgeInsetsMake(10,0,10,0)];
 }
 
 - (void)updateUI

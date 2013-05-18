@@ -8,17 +8,17 @@
         <scene sceneID="8ok-wc-n4I">
             <objects>
                 <tableViewController id="u6E-b3-EnT" customClass="DKArticleTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="88" sectionHeaderHeight="22" sectionFooterHeight="22" id="oKw-5I-6UG">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="84" sectionHeaderHeight="22" sectionFooterHeight="22" id="oKw-5I-6UG">
                         <rect key="frame" x="0.0" y="64" width="320" height="372"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Article" id="bxp-4a-HUn" customClass="DKArticleTableViewCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="88"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="84"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="87"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="83"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="I am the article title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riQ-Sw-yWi">
@@ -50,14 +50,14 @@
                                 </view>
                                 <gestureRecognizers/>
                                 <constraints>
+                                    <constraint firstItem="rwp-WA-wWm" firstAttribute="centerY" secondItem="bxp-4a-HUn" secondAttribute="centerY" type="default" id="0rK-6U-cIf"/>
+                                    <constraint firstAttribute="bottom" secondItem="A2w-bF-itJ" secondAttribute="bottom" constant="13" id="1bS-F2-tM3"/>
                                     <constraint firstAttribute="trailing" secondItem="riQ-Sw-yWi" secondAttribute="trailing" constant="40" type="user" id="7K9-RH-Dop"/>
                                     <constraint firstItem="A2w-bF-itJ" firstAttribute="leading" secondItem="bxp-4a-HUn" secondAttribute="leading" constant="20" type="default" id="N0q-OB-Yi2"/>
                                     <constraint firstItem="rwp-WA-wWm" firstAttribute="trailing" secondItem="riQ-Sw-yWi" secondAttribute="trailing" type="default" id="Q9Y-is-VMt"/>
                                     <constraint firstItem="riQ-Sw-yWi" firstAttribute="leading" secondItem="bxp-4a-HUn" secondAttribute="leading" constant="20" type="user" id="THF-fx-hTV"/>
-                                    <constraint firstItem="A2w-bF-itJ" firstAttribute="top" secondItem="rwp-WA-wWm" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="WCd-zi-fds"/>
+                                    <constraint firstItem="riQ-Sw-yWi" firstAttribute="top" secondItem="bxp-4a-HUn" secondAttribute="top" constant="11" id="c05-Sh-k3z"/>
                                     <constraint firstItem="rwp-WA-wWm" firstAttribute="trailing" secondItem="A2w-bF-itJ" secondAttribute="trailing" type="default" id="cAv-Tp-mZi"/>
-                                    <constraint firstItem="riQ-Sw-yWi" firstAttribute="top" secondItem="bxp-4a-HUn" secondAttribute="top" constant="4" id="gF8-Ff-xO4"/>
-                                    <constraint firstItem="rwp-WA-wWm" firstAttribute="top" secondItem="riQ-Sw-yWi" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="grA-fB-9ig"/>
                                     <constraint firstItem="rwp-WA-wWm" firstAttribute="leading" secondItem="bxp-4a-HUn" secondAttribute="leading" constant="20" type="user" id="ylT-lk-I5c"/>
                                 </constraints>
                                 <connections>
@@ -201,6 +201,40 @@
         <image name="comments.png" width="22" height="22"/>
         <image name="profile.png" width="44" height="44"/>
     </resources>
+    <classes>
+        <class className="DKArticleTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DKArticleTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="commentsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="urlLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="DKArticleTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DKArticleTableViewController.h"/>
+        </class>
+        <class className="DKArticleViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DKArticleViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="articleWebView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="commentsButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="spinner" candidateClass="UIActivityIndicatorView"/>
+            </relationships>
+        </class>
+        <class className="DKCommentsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DKCommentsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="spinner" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UIRefreshControl" superclassName="UIControl">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIRefreshControl.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
