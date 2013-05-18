@@ -29,8 +29,6 @@
 		1F54036A17429A9C00388083 /* comments@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F54032217429A9C00388083 /* comments@2x.png */; };
 		1F54036B17429A9C00388083 /* DKArticleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F54032517429A9C00388083 /* DKArticleTableViewController.m */; };
 		1F54036C17429A9C00388083 /* DKArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F54032717429A9C00388083 /* DKArticleViewController.m */; };
-		1F54036D17429A9C00388083 /* DKCommentsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F54032917429A9C00388083 /* DKCommentsCollectionViewController.m */; };
-		1F54036E17429A9C00388083 /* DKCommentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F54032B17429A9C00388083 /* DKCommentsTableViewController.m */; };
 		1F54036F17429A9C00388083 /* DKCommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F54032D17429A9C00388083 /* DKCommentsViewController.m */; };
 		1F54037317429A9C00388083 /* DKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F54033217429A9C00388083 /* DKAppDelegate.m */; };
 		1F54037417429A9C00388083 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F54033317429A9C00388083 /* InfoPlist.strings */; };
@@ -51,8 +49,6 @@
 		1F54038317429A9C00388083 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F54035E17429A9C00388083 /* profile.png */; };
 		1F54038417429A9C00388083 /* profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F54035F17429A9C00388083 /* profile@2x.png */; };
 		1F54038617429A9C00388083 /* DKArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F54036417429A9C00388083 /* DKArticleTableViewCell.m */; };
-		1F54038717429A9C00388083 /* DKCommentCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F54036617429A9C00388083 /* DKCommentCollectionViewCell.m */; };
-		1F54038817429A9C00388083 /* DKCommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F54036817429A9C00388083 /* DKCommentTableViewCell.m */; };
 		1F54038A17429D9900388083 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F54038917429D9900388083 /* Default-568h@2x.png */; };
 		1F54038C17429DA100388083 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F54038B17429DA100388083 /* Default.png */; };
 		1F54038E17429DA800388083 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F54038D17429DA800388083 /* Default@2x.png */; };
@@ -98,10 +94,6 @@
 		1F54032517429A9C00388083 /* DKArticleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKArticleTableViewController.m; sourceTree = "<group>"; };
 		1F54032617429A9C00388083 /* DKArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKArticleViewController.h; sourceTree = "<group>"; };
 		1F54032717429A9C00388083 /* DKArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKArticleViewController.m; sourceTree = "<group>"; };
-		1F54032817429A9C00388083 /* DKCommentsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCommentsCollectionViewController.h; sourceTree = "<group>"; };
-		1F54032917429A9C00388083 /* DKCommentsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCommentsCollectionViewController.m; sourceTree = "<group>"; };
-		1F54032A17429A9C00388083 /* DKCommentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCommentsTableViewController.h; sourceTree = "<group>"; };
-		1F54032B17429A9C00388083 /* DKCommentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCommentsTableViewController.m; sourceTree = "<group>"; };
 		1F54032C17429A9C00388083 /* DKCommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCommentsViewController.h; sourceTree = "<group>"; };
 		1F54032D17429A9C00388083 /* DKCommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCommentsViewController.m; sourceTree = "<group>"; };
 		1F54033117429A9C00388083 /* DKAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKAppDelegate.h; sourceTree = "<group>"; };
@@ -148,10 +140,6 @@
 		1F54036117429A9C00388083 /* sonarJS-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "sonarJS-Prefix.pch"; sourceTree = "<group>"; };
 		1F54036317429A9C00388083 /* DKArticleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKArticleTableViewCell.h; sourceTree = "<group>"; };
 		1F54036417429A9C00388083 /* DKArticleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKArticleTableViewCell.m; sourceTree = "<group>"; };
-		1F54036517429A9C00388083 /* DKCommentCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCommentCollectionViewCell.h; sourceTree = "<group>"; };
-		1F54036617429A9C00388083 /* DKCommentCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCommentCollectionViewCell.m; sourceTree = "<group>"; };
-		1F54036717429A9C00388083 /* DKCommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCommentTableViewCell.h; sourceTree = "<group>"; };
-		1F54036817429A9C00388083 /* DKCommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCommentTableViewCell.m; sourceTree = "<group>"; };
 		1F54038917429D9900388083 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1F54038B17429DA100388083 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		1F54038D17429DA800388083 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -207,15 +195,32 @@
 			path = FlatUIKit;
 			sourceTree = "<group>";
 		};
+		1F07153A17477F510080B014 /* Application Support */ = {
+			isa = PBXGroup;
+			children = (
+				1F54033117429A9C00388083 /* DKAppDelegate.h */,
+				1F54033217429A9C00388083 /* DKAppDelegate.m */,
+				1F54033317429A9C00388083 /* InfoPlist.strings */,
+				1F54035D17429A9C00388083 /* main.m */,
+				1F54035E17429A9C00388083 /* profile.png */,
+				1F54035F17429A9C00388083 /* profile@2x.png */,
+				1F54036017429A9C00388083 /* sonarJS-Info.plist */,
+				1F54036117429A9C00388083 /* sonarJS-Prefix.pch */,
+				1F54032217429A9C00388083 /* comments@2x.png */,
+				1F54032117429A9C00388083 /* comments.png */,
+			);
+			name = "Application Support";
+			sourceTree = "<group>";
+		};
 		1F31A74A17312EDB004343FF = {
 			isa = PBXGroup;
 			children = (
 				1F54038D17429DA800388083 /* Default@2x.png */,
 				1F54038B17429DA100388083 /* Default.png */,
 				1F54038917429D9900388083 /* Default-568h@2x.png */,
-				1F54032017429A9C00388083 /* sonarJS */,
 				1F8CE91F173F7BE60062B027 /* icon.png */,
 				1F8CE91D173F7BE10062B027 /* icon@2x.png */,
+				1F54032017429A9C00388083 /* sonarJS */,
 				1F31A75517312EDB004343FF /* Frameworks */,
 				1F31A75417312EDB004343FF /* Products */,
 			);
@@ -245,20 +250,11 @@
 		1F54032017429A9C00388083 /* sonarJS */ = {
 			isa = PBXGroup;
 			children = (
-				1F54032117429A9C00388083 /* comments.png */,
-				1F54032217429A9C00388083 /* comments@2x.png */,
-				1F54032317429A9C00388083 /* Controller */,
-				1F54033117429A9C00388083 /* DKAppDelegate.h */,
-				1F54033217429A9C00388083 /* DKAppDelegate.m */,
-				1F54033317429A9C00388083 /* InfoPlist.strings */,
-				1F54033517429A9C00388083 /* MainStoryboard.storyboard */,
-				1F54033717429A9C00388083 /* Library */,
-				1F54035D17429A9C00388083 /* main.m */,
-				1F54035E17429A9C00388083 /* profile.png */,
-				1F54035F17429A9C00388083 /* profile@2x.png */,
-				1F54036017429A9C00388083 /* sonarJS-Info.plist */,
-				1F54036117429A9C00388083 /* sonarJS-Prefix.pch */,
 				1F54036217429A9C00388083 /* View */,
+				1F54032317429A9C00388083 /* Controller */,
+				1F54033717429A9C00388083 /* Library */,
+				1F07153A17477F510080B014 /* Application Support */,
+				1F54033517429A9C00388083 /* MainStoryboard.storyboard */,
 			);
 			path = sonarJS;
 			sourceTree = "<group>";
@@ -270,10 +266,6 @@
 				1F54032517429A9C00388083 /* DKArticleTableViewController.m */,
 				1F54032617429A9C00388083 /* DKArticleViewController.h */,
 				1F54032717429A9C00388083 /* DKArticleViewController.m */,
-				1F54032817429A9C00388083 /* DKCommentsCollectionViewController.h */,
-				1F54032917429A9C00388083 /* DKCommentsCollectionViewController.m */,
-				1F54032A17429A9C00388083 /* DKCommentsTableViewController.h */,
-				1F54032B17429A9C00388083 /* DKCommentsTableViewController.m */,
 				1F54032C17429A9C00388083 /* DKCommentsViewController.h */,
 				1F54032D17429A9C00388083 /* DKCommentsViewController.m */,
 			);
@@ -340,10 +332,6 @@
 			children = (
 				1F54036317429A9C00388083 /* DKArticleTableViewCell.h */,
 				1F54036417429A9C00388083 /* DKArticleTableViewCell.m */,
-				1F54036517429A9C00388083 /* DKCommentCollectionViewCell.h */,
-				1F54036617429A9C00388083 /* DKCommentCollectionViewCell.m */,
-				1F54036717429A9C00388083 /* DKCommentTableViewCell.h */,
-				1F54036817429A9C00388083 /* DKCommentTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -435,8 +423,6 @@
 			files = (
 				1F54036B17429A9C00388083 /* DKArticleTableViewController.m in Sources */,
 				1F54036C17429A9C00388083 /* DKArticleViewController.m in Sources */,
-				1F54036D17429A9C00388083 /* DKCommentsCollectionViewController.m in Sources */,
-				1F54036E17429A9C00388083 /* DKCommentsTableViewController.m in Sources */,
 				1F54036F17429A9C00388083 /* DKCommentsViewController.m in Sources */,
 				1F54037317429A9C00388083 /* DKAppDelegate.m in Sources */,
 				1F54037617429A9C00388083 /* AFHTTPClient.m in Sources */,
@@ -451,8 +437,6 @@
 				1F54038017429A9C00388083 /* NSDate+TimeAgo.m in Sources */,
 				1F54038217429A9C00388083 /* main.m in Sources */,
 				1F54038617429A9C00388083 /* DKArticleTableViewCell.m in Sources */,
-				1F54038717429A9C00388083 /* DKCommentCollectionViewCell.m in Sources */,
-				1F54038817429A9C00388083 /* DKCommentTableViewCell.m in Sources */,
 				1F071524174580070080B014 /* FUIAlertView.m in Sources */,
 				1F071525174580070080B014 /* FUIButton.m in Sources */,
 				1F071526174580070080B014 /* FUISwitch.m in Sources */,

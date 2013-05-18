@@ -8,8 +8,6 @@
 
 #import "DKArticleViewController.h"
 #import "DKCommentsViewController.h"
-#import "DKCommentsCollectionViewController.h"
-#import "DKCommentsTableViewController.h"
 
 @interface DKArticleViewController () <UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *commentsButton;
@@ -69,18 +67,7 @@
             
             destinationController.articleId = self.articleId;
         }
-        if ([segue.destinationViewController isKindOfClass:[DKCommentsCollectionViewController class]]) {
-            DKCommentsCollectionViewController *destinationController = (DKCommentsCollectionViewController *)segue.destinationViewController;
-            
-            destinationController.articleId = self.articleId;
-        }
-        if ([segue.destinationViewController isKindOfClass:[DKCommentsTableViewController class]]) {
-            DKCommentsTableViewController *destinationController = (DKCommentsTableViewController *)segue.destinationViewController;
-            
-            destinationController.articleId = self.articleId;
-        }
     }
-    
 }
 
 #pragma mark - Webview delegate

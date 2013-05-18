@@ -14,15 +14,6 @@
 {
     // Override point for customization after application launch.
     
-//    UIImage *image = [[UIImage alloc] init];
-//    [[UINavigationBar appearance] setShadowImage:image];
-//    [[UINavigationBar appearance] setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
-//    [[UINavigationBar appearance] setTitleTextAttributes:@{
-//                         UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetMake(0, 0)]
-//     }];
-//    [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];    
-//    [[UIBarButtonItem appearance] setBackgroundImage:image forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    
     return YES;
 }
 							
