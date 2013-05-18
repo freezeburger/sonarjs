@@ -26,6 +26,7 @@ static NSInteger counter = 0;
 {
     @synchronized (self) {
         counter -= 1;
+        if (counter < 0) counter = 0;
         if (counter == 0) {
             self.networkActivityIndicatorVisible = NO;
         }

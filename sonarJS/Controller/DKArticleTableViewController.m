@@ -35,6 +35,7 @@
     // ios bug: we have to chain the target / action in code
     [self.refreshControl addTarget:self action:@selector(handlePullToRefresh) forControlEvents:UIControlEventValueChanged];
     
+    
     [self loadData];
 
 }
