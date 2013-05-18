@@ -24,17 +24,47 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // bug: we have to chain the target / action in code
-    [self.refreshControl addTarget:self
-                            action:@selector(loadData)
-                  forControlEvents:UIControlEventValueChanged];
+    [self configureFlatUI];
+    
+    // ios bug: we have to chain the target / action in code
+    [self.refreshControl addTarget:self action:@selector(handlePullToRefresh) forControlEvents:UIControlEventValueChanged];
     
     [self loadData];
-    
-    [self configureFlatUI];
+
+}
+
+
+
+#pragma mark - Getters / Setters
+
+- (void)setData:(NSMutableArray *)data
+{
+    _data = data;
     [self updateUI];
 }
+
+
+
+#pragma mark - UI
+
+- (void)configureFlatUI
+{
+    UIColor *redColor  = [UIColor colorWithRed:0.73f green:0.09f blue:0.00f alpha:1.00f];
+    UIColor *flatDark  = [UIColor colorWithRed:0.75f green:0.22f blue:0.17f alpha:1.00f];
+    UIColor *flatLight = [UIColor colorWithRed:0.91f green:0.30f blue:0.24f alpha:1.00f];
+    [self.navigationController.navigationBar configureFlatNavigationBarWithColor:redColor];
+    [UIBarButtonItem configureFlatButtonsWithColor:flatDark highlightedColor:flatLight cornerRadius:3];
+}
+
+- (void)updateUI
+{    
+    // complete reload, should be changed later to higher performance
+    [self.tableView reloadData];
+}
+
+
+
+#pragma mark - Event handlers
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(DKArticleTableViewCell *)sender
 {
@@ -52,62 +82,12 @@
     }
 }
 
-#pragma mark - Helper
-
-- (void)configureFlatUI
+- (IBAction)handlePullToRefresh
 {
-    UIColor *redColor  = [UIColor colorWithRed:0.73f green:0.09f blue:0.00f alpha:1.00f];
-    UIColor *flatDark  = [UIColor colorWithRed:0.75f green:0.22f blue:0.17f alpha:1.00f];
-    UIColor *flatLight = [UIColor colorWithRed:0.91f green:0.30f blue:0.24f alpha:1.00f];
-    [self.navigationController.navigationBar configureFlatNavigationBarWithColor:redColor];
-    [UIBarButtonItem configureFlatButtonsWithColor:flatDark
-                                  highlightedColor:flatLight
-                                      cornerRadius:3];
+    [self loadData];
 }
 
-- (void)updateUI
-{    
-    // complete reload, should be changed later to higher performance
-    [self.tableView reloadData];
-}
 
-- (void)setData:(NSMutableArray *)data
-{
-    _data = data;
-    [self updateUI];
-}
-
-#pragma mark - Actions
-
-- (IBAction)loadData
-{
-    [self.refreshControl beginRefreshing];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    
-    dispatch_queue_t q = dispatch_queue_create("articles", NULL); // serial
-    dispatch_async(q, ^{
-        
-        NSURL *url = [NSURL URLWithString:@"http://www.echojs.com/api/getnews/top/0/30"];
-        NSURLRequest *request = [NSURLRequest requestWithURL:url];
-        
-        AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-
-                // this will update the ui, so we need to call it here!!
-                self.data = [JSON valueForKeyPath:@"news"];
-
-                // all ui kit related code most go here, because it is NOT threadsave
-                [self.refreshControl endRefreshing];
-                
-                // this spinner is global so basically we would need a kind of reference counting
-                // whether things are going right now or not!
-                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-            });
-        } failure:nil];
-        
-        [operation start];
-    });
-}
 
 #pragma mark - Table view data source
 
@@ -130,4 +110,39 @@
     
     return cell;
 }
+
+
+
+#pragma mark - Helpers
+
+- (IBAction)loadData
+{
+    [self.refreshControl beginRefreshing];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    dispatch_queue_t q = dispatch_queue_create("articles", NULL); // serial
+    dispatch_async(q, ^{
+        
+        NSURL *url = [NSURL URLWithString:@"http://www.echojs.com/api/getnews/top/0/30"];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        
+        AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                // this will update the ui, so we need to call it here!!
+                self.data = [JSON valueForKeyPath:@"news"];
+                
+                // all ui kit related code most go here, because it is NOT threadsave
+                [self.refreshControl endRefreshing];
+                
+                // this spinner is global so basically we would need a kind of reference counting
+                // whether things are going right now or not!
+                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            });
+        } failure:nil];
+        
+        [operation start];
+    });
+}
+
 @end

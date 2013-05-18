@@ -17,6 +17,21 @@
 
 @implementation DKArticleViewController
 
+#pragma mark - Setup
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.articleWebView.delegate = self;
+    
+	[self updateUI];
+}
+
+
+
+#pragma mark - Getters / Setters
+
 - (void)setArticleTitle:(NSString *)articleTitle
 {
     _articleTitle = articleTitle;
@@ -41,14 +56,9 @@
     [self updateUI];
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    self.articleWebView.delegate = self;
-    
-	[self updateUI];
-}
+
+
+#pragma mark - UI
 
 - (void)updateUI
 {
@@ -58,6 +68,10 @@
     
     self.title = self.articleTitle;
 }
+
+
+
+#pragma mark - Event handlers
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -70,7 +84,9 @@
     }
 }
 
-#pragma mark - Webview delegate
+
+
+#pragma mark - webview delegate
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {

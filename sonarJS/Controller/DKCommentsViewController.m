@@ -15,24 +15,7 @@
 
 @implementation DKCommentsViewController
 
-#pragma mark - Setters
-
-- (void)setArticleId:(NSInteger)articleId
-{
-    _articleId = articleId;
-    [self updateUI];
-}
-
-#pragma mark - Rendering
-
-- (void)updateUI
-{
-    NSString *commentsUrlString = [NSString stringWithFormat:@"http://www.echojs.com/news/%d", self.articleId];
-    NSURL *url = [NSURL URLWithString:commentsUrlString];
-    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-    
-    [self.webView loadRequest:requestObj];
-}
+#pragma mark - Setup
 
 - (void)viewDidLoad
 {
@@ -44,7 +27,32 @@
     [self updateUI];
 }
 
-#pragma mark - Webview delegate
+
+
+#pragma mark - Getters / Setters
+
+- (void)setArticleId:(NSInteger)articleId
+{
+    _articleId = articleId;
+    [self updateUI];
+}
+
+
+
+#pragma mark - UI
+
+- (void)updateUI
+{
+    NSString *commentsUrlString = [NSString stringWithFormat:@"http://www.echojs.com/news/%d", self.articleId];
+    NSURL *url = [NSURL URLWithString:commentsUrlString];
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    
+    [self.webView loadRequest:requestObj];
+}
+
+
+
+#pragma mark - webview delegate
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
