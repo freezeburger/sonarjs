@@ -21,6 +21,7 @@
 		1F07152E174580070080B014 /* UIStepper+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F071521174580070080B014 /* UIStepper+FlatUI.m */; };
 		1F07152F174580070080B014 /* UITabBar+FlatUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F071523174580070080B014 /* UITabBar+FlatUI.m */; };
 		1F071541174789120080B014 /* DKEchoJS.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F071540174789120080B014 /* DKEchoJS.m */; };
+		1F0715451747BF470080B014 /* UIApplication+NetworkActivityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0715441747BF470080B014 /* UIApplication+NetworkActivityManager.m */; };
 		1F31A75717312EDB004343FF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F31A75617312EDB004343FF /* UIKit.framework */; };
 		1F31A75917312EDB004343FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F31A75817312EDB004343FF /* Foundation.framework */; };
 		1F31A75B17312EDB004343FF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F31A75A17312EDB004343FF /* CoreGraphics.framework */; };
@@ -85,6 +86,8 @@
 		1F071523174580070080B014 /* UITabBar+FlatUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+FlatUI.m"; sourceTree = "<group>"; };
 		1F07153F174789120080B014 /* DKEchoJS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKEchoJS.h; path = Model/DKEchoJS.h; sourceTree = "<group>"; };
 		1F071540174789120080B014 /* DKEchoJS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKEchoJS.m; path = Model/DKEchoJS.m; sourceTree = "<group>"; };
+		1F0715431747BF470080B014 /* UIApplication+NetworkActivityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIApplication+NetworkActivityManager.h"; path = "Category/UIApplication+NetworkActivityManager.h"; sourceTree = "<group>"; };
+		1F0715441747BF470080B014 /* UIApplication+NetworkActivityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+NetworkActivityManager.m"; path = "Category/UIApplication+NetworkActivityManager.m"; sourceTree = "<group>"; };
 		1F31A75317312EDB004343FF /* sonarJS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sonarJS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F31A75617312EDB004343FF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1F31A75817312EDB004343FF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -224,6 +227,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		1F0715421747BEF50080B014 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				1F0715431747BF470080B014 /* UIApplication+NetworkActivityManager.h */,
+				1F0715441747BF470080B014 /* UIApplication+NetworkActivityManager.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
 		1F31A74A17312EDB004343FF = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +277,7 @@
 				1F07153B174784A10080B014 /* Model */,
 				1F54036217429A9C00388083 /* View */,
 				1F54032317429A9C00388083 /* Controller */,
+				1F0715421747BEF50080B014 /* Category */,
 				1F54033717429A9C00388083 /* Library */,
 				1F07153A17477F510080B014 /* Application Support */,
 				1F54033517429A9C00388083 /* MainStoryboard.storyboard */,
@@ -463,6 +476,7 @@
 				1F07152E174580070080B014 /* UIStepper+FlatUI.m in Sources */,
 				1F07152F174580070080B014 /* UITabBar+FlatUI.m in Sources */,
 				1F071541174789120080B014 /* DKEchoJS.m in Sources */,
+				1F0715451747BF470080B014 /* UIApplication+NetworkActivityManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

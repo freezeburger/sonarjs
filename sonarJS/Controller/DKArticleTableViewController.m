@@ -13,6 +13,7 @@
 #import "UINavigationBar+FlatUI.h"
 #import "UIBarButtonItem+FlatUI.h"
 #import "UIFont+FlatUI.h"
+#import "UIApplication+NetworkActivityManager.h"
 
 #define DK_ARTICLE_START_INDEX 0
 #define DK_ARTICLE_PAGE_COUNT 30
@@ -134,7 +135,7 @@
 - (IBAction)loadData
 {
     [self.refreshControl beginRefreshing];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    [[UIApplication sharedApplication] showNetworkActivityIndicator];
     
     [self.echoJS retrieveArticlesOrderedBy:DKEchoJSOrderModeTop startingAtIndex:DK_ARTICLE_START_INDEX withCount:DK_ARTICLE_PAGE_COUNT success:^(id articles){
         // this will update the ui, so we need to call it here!!
@@ -143,9 +144,7 @@
         // all ui kit related code most go here, because it is NOT threadsave
         [self.refreshControl endRefreshing];
         
-        // this spinner is global so basically we would need a kind of reference counting
-        // whether things are going right now or not!
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        [[UIApplication sharedApplication] hideNetworkActivityIndicator];
         
     }];
 }

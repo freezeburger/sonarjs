@@ -8,6 +8,7 @@
 
 #import "DKArticleViewController.h"
 #import "DKCommentsViewController.h"
+#import "UIApplication+NetworkActivityManager.h"
 
 @interface DKArticleViewController () <UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *commentsButton;
@@ -24,8 +25,7 @@
     [super viewDidLoad];
     
     self.articleWebView.delegate = self;
-    
-	[self updateUI];
+    [self updateUI];
 }
 
 
@@ -90,13 +90,13 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    [[UIApplication sharedApplication] showNetworkActivityIndicator];
     [self.spinner startAnimating];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [[UIApplication sharedApplication] hideNetworkActivityIndicator];
     [self.spinner stopAnimating];
 }
 
