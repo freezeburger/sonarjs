@@ -12,6 +12,7 @@
 #import "DKEchoJS.h"
 #import "UIApplication+NetworkActivityManager.h"
 #import "ECSlidingViewController.h"
+#import "UIScrollView+SVInfiniteScrolling.h"
 
 #define DK_ARTICLE_START_INDEX 0
 #define DK_ARTICLE_PAGE_COUNT 30
@@ -20,6 +21,7 @@
 @property (strong, nonatomic) NSMutableArray *data;
 @property (strong, nonatomic) DKEchoJS *echoJS;
 @property (nonatomic) BOOL showsLatest;
+@property (nonatomic) NSInteger currentPage;
 @property (weak, nonatomic) IBOutlet UIButton *orderButton;
 @end
 
@@ -34,6 +36,22 @@
     
     // ios bug: we have to chain the target / action in code
     [self.refreshControl addTarget:self action:@selector(handlePullToRefresh:) forControlEvents:UIControlEventValueChanged];
+    
+    // add infinite scrolling
+    __weak DKArticleTableViewController *weakSelf = self;
+    [self.tableView addInfiniteScrollingWithActionHandler:^{
+        weakSelf.currentPage += 1;
+        [weakSelf.echoJS retrieveArticlesOrderedBy:(weakSelf.showsLatest ? DKEchoJSOrderModeLatest :  DKEchoJSOrderModeTop) startingAtIndex:weakSelf.currentPage * DK_ARTICLE_PAGE_COUNT withCount:DK_ARTICLE_PAGE_COUNT success:^(id JSON){
+            
+            [weakSelf.data addObjectsFromArray:JSON];
+            [weakSelf updateUI];
+
+            [weakSelf.tableView.infiniteScrollingView stopAnimating];
+        }];
+
+    }];
+    
+    self.currentPage = 0;
     
     // initially load data
     [self handleRefreshButton:nil];
@@ -98,9 +116,11 @@
 
 - (IBAction)handleRefreshButton:(id)sender {
     [[UIApplication sharedApplication] showNetworkActivityIndicator];
-        
+    
+    self.currentPage = 0;
+    
     [self.echoJS retrieveArticlesOrderedBy:(self.showsLatest ? DKEchoJSOrderModeLatest :  DKEchoJSOrderModeTop) startingAtIndex:DK_ARTICLE_START_INDEX withCount:DK_ARTICLE_PAGE_COUNT success:^(id articles){
-        self.data = articles; // this will update the ui, so we need to call it here!!
+        self.data = [articles mutableCopy]; // this will update the ui, so we need to call it here!!
 
         [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
         
@@ -111,11 +131,12 @@
 
 - (IBAction)handlePullToRefresh:(id)sender
 {
+    self.currentPage = 0;
     [self.refreshControl beginRefreshing];
     [[UIApplication sharedApplication] showNetworkActivityIndicator];
     
     [self.echoJS retrieveArticlesOrderedBy:(self.showsLatest ? DKEchoJSOrderModeLatest :  DKEchoJSOrderModeTop) startingAtIndex:DK_ARTICLE_START_INDEX withCount:DK_ARTICLE_PAGE_COUNT success:^(id articles){
-        self.data = articles; // this will update the ui, so we need to call it here!!
+        self.data = [articles mutableCopy]; // this will update the ui, so we need to call it here!!
         
         [self.refreshControl endRefreshing];
     
