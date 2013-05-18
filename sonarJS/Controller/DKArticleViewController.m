@@ -28,6 +28,14 @@
     [self updateUI];
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    if ([self isMovingFromParentViewController] && self.articleWebView.isLoading) {
+        [[UIApplication sharedApplication] hideNetworkActivityIndicator];
+        [self.articleWebView stopLoading];
+    }
+}
+
 
 
 #pragma mark - Getters / Setters
@@ -95,6 +103,12 @@
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [[UIApplication sharedApplication] hideNetworkActivityIndicator];
+    [self.spinner stopAnimating];
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     [[UIApplication sharedApplication] hideNetworkActivityIndicator];
     [self.spinner stopAnimating];

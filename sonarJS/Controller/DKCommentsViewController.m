@@ -28,6 +28,14 @@
     [self updateUI];
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    if ([self isMovingFromParentViewController] && self.webView.isLoading) {
+        [[UIApplication sharedApplication] hideNetworkActivityIndicator];
+        [self.webView stopLoading];
+    }
+}
+
 
 
 #pragma mark - Getters / Setters
