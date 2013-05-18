@@ -7,16 +7,42 @@
 //
 
 #import "DKAppDelegate.h"
+#import "UIBarButtonItem+FlatUI.h"
+#import "UINavigationBar+FlatUI.h"
+#import "UIFont+FlatUI.h"
 
 @implementation DKAppDelegate
+
+#pragma mark - Helpers
+
+- (void)configureFlatUI
+{
+    UIColor *redColor  = [UIColor colorWithRed:0.73f green:0.09f blue:0.00f alpha:1.00f];
+    UIColor *reallyDark  = [UIColor colorWithRed:0.34f green:0.04f blue:0.00f alpha:1.00f];
+    UIColor *darkRedColor = [UIColor colorWithRed:0.64f green:0.08f blue:0.00f alpha:1.00f];
+
+    UINavigationController *navCon = (UINavigationController *)self.window.rootViewController;
+    
+    [navCon.navigationBar configureFlatNavigationBarWithColor:redColor];
+    [navCon.navigationBar setTitleTextAttributes:@{UITextAttributeTextShadowColor: redColor}];
+    
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{UITextAttributeTextShadowColor: redColor} forState:UIControlStateNormal];
+    [UIBarButtonItem configureFlatButtonsWithColor:darkRedColor highlightedColor:reallyDark cornerRadius:3];
+}
+
+
+
+#pragma mark - app delegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     
+    [self configureFlatUI];
+    
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

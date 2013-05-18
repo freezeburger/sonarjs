@@ -10,9 +10,6 @@
 #import "DKArticleViewController.h"
 #import "DKArticleTableViewCell.h"
 #import "DKEchoJS.h"
-#import "UINavigationBar+FlatUI.h"
-#import "UIBarButtonItem+FlatUI.h"
-#import "UIFont+FlatUI.h"
 #import "UIApplication+NetworkActivityManager.h"
 
 #define DK_ARTICLE_START_INDEX 0
@@ -30,14 +27,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self configureFlatUI];
+    [self configureCustomUI];
     
     // ios bug: we have to chain the target / action in code
     [self.refreshControl addTarget:self action:@selector(handlePullToRefresh) forControlEvents:UIControlEventValueChanged];
     
-    
     [self loadData];
-
 }
 
 
@@ -60,17 +55,8 @@
 
 #pragma mark - UI
 
-- (void)configureFlatUI
+- (void)configureCustomUI
 {
-    UIColor *redColor  = [UIColor colorWithRed:0.73f green:0.09f blue:0.00f alpha:1.00f];
-    UIColor *reallyDark  = [UIColor colorWithRed:0.34f green:0.04f blue:0.00f alpha:1.00f];
-    UIColor *darkRedColor = [UIColor colorWithRed:0.64f green:0.08f blue:0.00f alpha:1.00f];
-    [self.navigationController.navigationBar configureFlatNavigationBarWithColor:redColor];
-    [self.navigationController.navigationBar setTitleTextAttributes:@{
-                                     UITextAttributeTextShadowColor: redColor
-     }];
-    [[UIBarButtonItem appearance] setTitleTextAttributes:@{UITextAttributeTextShadowColor: redColor} forState:UIControlStateNormal];
-    [UIBarButtonItem configureFlatButtonsWithColor:darkRedColor highlightedColor:reallyDark cornerRadius:3];
     [self.tableView setContentInset:UIEdgeInsetsMake(10,0,10,0)];
 }
 

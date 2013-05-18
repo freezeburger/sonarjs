@@ -10,7 +10,7 @@
 #import "UIApplication+NetworkActivityManager.h"
 
 @interface DKCommentsViewController () <UIWebViewDelegate>
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UIWebView *commentWebView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 @end
 
@@ -22,17 +22,17 @@
 {
     [super viewDidLoad];
     
-    self.webView.scalesPageToFit = YES;
-    self.webView.delegate = self;
+    self.commentWebView.scalesPageToFit = YES;
+    self.commentWebView.delegate = self;
     
     [self updateUI];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
-    if ([self isMovingFromParentViewController] && self.webView.isLoading) {
+    if ([self isMovingFromParentViewController] && self.commentWebView.isLoading) {
         [[UIApplication sharedApplication] hideNetworkActivityIndicator];
-        [self.webView stopLoading];
+        [self.commentWebView stopLoading];
     }
 }
 
@@ -56,7 +56,7 @@
     NSURL *url = [NSURL URLWithString:commentsUrlString];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     
-    [self.webView loadRequest:requestObj];
+    [self.commentWebView loadRequest:requestObj];
 }
 
 
