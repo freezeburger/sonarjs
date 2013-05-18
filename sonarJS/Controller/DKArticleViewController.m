@@ -73,8 +73,6 @@
     NSURL *url = [NSURL URLWithString:self.articleUrl];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [self.articleWebView loadRequest:requestObj];
-    
-    self.title = self.articleTitle;
 }
 
 

@@ -10,6 +10,7 @@
 #import "UIBarButtonItem+FlatUI.h"
 #import "UINavigationBar+FlatUI.h"
 #import "UIFont+FlatUI.h"
+#import "ECSlidingViewController.h"
 
 @implementation DKAppDelegate
 
@@ -21,7 +22,8 @@
     UIColor *reallyDark  = [UIColor colorWithRed:0.34f green:0.04f blue:0.00f alpha:1.00f];
     UIColor *darkRedColor = [UIColor colorWithRed:0.64f green:0.08f blue:0.00f alpha:1.00f];
 
-    UINavigationController *navCon = (UINavigationController *)self.window.rootViewController;
+    ECSlidingViewController *con = (ECSlidingViewController *)self.window.rootViewController;
+    UINavigationController *navCon = (UINavigationController *)con.topViewController;
     
     [navCon.navigationBar configureFlatNavigationBarWithColor:redColor];
     [navCon.navigationBar setTitleTextAttributes:@{UITextAttributeTextShadowColor: redColor}];
@@ -37,6 +39,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    ECSlidingViewController *con = (ECSlidingViewController *)self.window.rootViewController;
+    con.topViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"Articles"];
     
     [self configureFlatUI];
     

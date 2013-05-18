@@ -11,6 +11,7 @@
 #import "DKArticleTableViewCell.h"
 #import "DKEchoJS.h"
 #import "UIApplication+NetworkActivityManager.h"
+#import "ECSlidingViewController.h"
 
 #define DK_ARTICLE_START_INDEX 0
 #define DK_ARTICLE_PAGE_COUNT 30
@@ -18,6 +19,8 @@
 @interface DKArticleTableViewController ()
 @property (strong, nonatomic) NSMutableArray *data;
 @property (strong, nonatomic) DKEchoJS *echoJS;
+@property (nonatomic) BOOL showsLatest;
+@property (weak, nonatomic) IBOutlet UIButton *orderButton;
 @end
 
 @implementation DKArticleTableViewController
@@ -34,6 +37,12 @@
     
     // initially load data
     [self handleRefreshButton:nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.slidingViewController.underLeftViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"Menu"];
+    self.slidingViewController.anchorRightRevealAmount = 280.0f;
 }
 
 
@@ -89,8 +98,8 @@
 
 - (IBAction)handleRefreshButton:(id)sender {
     [[UIApplication sharedApplication] showNetworkActivityIndicator];
-    
-    [self.echoJS retrieveArticlesOrderedBy:DKEchoJSOrderModeTop startingAtIndex:DK_ARTICLE_START_INDEX withCount:DK_ARTICLE_PAGE_COUNT success:^(id articles){
+        
+    [self.echoJS retrieveArticlesOrderedBy:(self.showsLatest ? DKEchoJSOrderModeLatest :  DKEchoJSOrderModeTop) startingAtIndex:DK_ARTICLE_START_INDEX withCount:DK_ARTICLE_PAGE_COUNT success:^(id articles){
         self.data = articles; // this will update the ui, so we need to call it here!!
 
         [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
@@ -105,7 +114,7 @@
     [self.refreshControl beginRefreshing];
     [[UIApplication sharedApplication] showNetworkActivityIndicator];
     
-    [self.echoJS retrieveArticlesOrderedBy:DKEchoJSOrderModeTop startingAtIndex:DK_ARTICLE_START_INDEX withCount:DK_ARTICLE_PAGE_COUNT success:^(id articles){
+    [self.echoJS retrieveArticlesOrderedBy:(self.showsLatest ? DKEchoJSOrderModeLatest :  DKEchoJSOrderModeTop) startingAtIndex:DK_ARTICLE_START_INDEX withCount:DK_ARTICLE_PAGE_COUNT success:^(id articles){
         self.data = articles; // this will update the ui, so we need to call it here!!
         
         [self.refreshControl endRefreshing];
@@ -113,6 +122,20 @@
         [[UIApplication sharedApplication] hideNetworkActivityIndicator];
     }];
 }
+
+- (IBAction)handleMenuButton:(id)sender
+{
+    [self.slidingViewController anchorTopViewTo:ECRight];
+}
+
+- (IBAction)handleOrderButton:(UIButton *)sender
+{
+    sender.selected = !sender.selected;
+    self.showsLatest = sender.selected;
+    self.data = nil;
+    [self handleRefreshButton:nil];
+}
+
 
 
 

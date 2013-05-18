@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M6F-Xd-2OT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="GIB-g0-iuc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Article Table View Controller - Top Articles-->
+        <!--Article Table View Controller-->
         <scene sceneID="8ok-wc-n4I">
             <objects>
                 <tableViewController id="u6E-b3-EnT" customClass="DKArticleTableViewController" sceneMemberID="viewController">
@@ -80,8 +80,31 @@
                             <inset key="imageInsets" minX="8" minY="10" maxX="8" maxY="6"/>
                         </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="Top Articles" id="Tz2-Bn-rob">
+                    <navigationItem key="navigationItem" id="Tz2-Bn-rob">
+                        <nil key="title"/>
                         <barButtonItem key="backBarButtonItem" title="＜" id="b5K-Pr-Qp9"/>
+                        <barButtonItem key="leftBarButtonItem" title="M" id="V6E-CT-vnq">
+                            <connections>
+                                <action selector="handleMenuButton:" destination="u6E-b3-EnT" id="OjV-yz-blw"/>
+                            </connections>
+                        </barButtonItem>
+                        <button key="titleView" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="vle-2m-mTA" customClass="FUIButton">
+                            <rect key="frame" x="71" y="-1" width="178" height="45"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                            <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                            <state key="normal" title="Top">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" title="Latest"/>
+                            <state key="highlighted">
+                                <color key="titleShadowColor" red="0.0" green="0.1019607857" blue="0.082352943720000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="handleOrderButton:" destination="u6E-b3-EnT" eventType="touchUpInside" id="8e5-xc-is6"/>
+                            </connections>
+                        </button>
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="wBC-Ru-hRN">
                             <connections>
                                 <action selector="handleRefreshButton:" destination="u6E-b3-EnT" id="xB4-ft-YFr"/>
@@ -93,10 +116,93 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.75294119120000003" green="0.1411764771" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </refreshControl>
+                    <connections>
+                        <outlet property="orderButton" destination="vle-2m-mTA" id="bDg-4X-06x"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7QD-eI-R4m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="888" y="39"/>
+            <point key="canvasLocation" x="864" y="34"/>
+        </scene>
+        <!--Sliding View Controller-->
+        <scene sceneID="S57-Ux-feQ">
+            <objects>
+                <viewController id="GIB-g0-iuc" customClass="ECSlidingViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a9O-kz-uN0">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="63s-GN-0IN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="384" y="626"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Sxz-Jk-hWr">
+            <objects>
+                <viewController storyboardIdentifier="Menu" id="rNY-m7-BX4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rta-Rh-RSj">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="powered by echojs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yd0-yN-Jta">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpZ-oR-41g">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="226" id="BZv-X7-cVB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Top Articles">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXu-aa-fRb">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Latest Articles">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GzE-kh-5H1">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Feedback">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GzE-kh-5H1" firstAttribute="trailing" secondItem="aXu-aa-fRb" secondAttribute="trailing" type="default" id="Flm-vV-XDV"/>
+                            <constraint firstItem="aXu-aa-fRb" firstAttribute="top" secondItem="lpZ-oR-41g" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="SZY-Ir-i0G"/>
+                            <constraint firstAttribute="bottom" secondItem="yd0-yN-Jta" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="TjG-M0-wxF"/>
+                            <constraint firstItem="GzE-kh-5H1" firstAttribute="top" secondItem="aXu-aa-fRb" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="U9X-Gk-4g4"/>
+                            <constraint firstItem="aXu-aa-fRb" firstAttribute="leading" secondItem="Rta-Rh-RSj" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="WY8-fe-T9W"/>
+                            <constraint firstItem="GzE-kh-5H1" firstAttribute="leading" secondItem="Rta-Rh-RSj" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="eAz-tg-mh5"/>
+                            <constraint firstItem="lpZ-oR-41g" firstAttribute="leading" secondItem="Rta-Rh-RSj" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="gq6-td-mkh"/>
+                            <constraint firstItem="aXu-aa-fRb" firstAttribute="trailing" secondItem="lpZ-oR-41g" secondAttribute="trailing" type="default" id="s4s-0m-K0g"/>
+                            <constraint firstItem="lpZ-oR-41g" firstAttribute="top" secondItem="Rta-Rh-RSj" secondAttribute="top" constant="20" symbolic="YES" type="default" id="yFJ-hL-2Sw"/>
+                            <constraint firstItem="yd0-yN-Jta" firstAttribute="leading" secondItem="Rta-Rh-RSj" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="zoE-NZ-WcF"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Upw-7Y-4ec" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="755" y="626"/>
         </scene>
         <!--Article View Controller - Article-->
         <scene sceneID="ocR-71-Xf2">
@@ -183,7 +289,7 @@
         <!--Navigation Controller-->
         <scene sceneID="87y-SL-EJR">
             <objects>
-                <navigationController id="M6F-Xd-2OT" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Articles" id="M6F-Xd-2OT" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VIe-h9-1JG">
@@ -217,6 +323,9 @@
         </class>
         <class className="DKArticleTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DKArticleTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="orderButton" candidateClass="UIButton"/>
+            </relationships>
         </class>
         <class className="DKArticleViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DKArticleViewController.h"/>
@@ -232,6 +341,12 @@
                 <relationship kind="outlet" name="commentWebView" candidateClass="UIWebView"/>
                 <relationship kind="outlet" name="spinner" candidateClass="UIActivityIndicatorView"/>
             </relationships>
+        </class>
+        <class className="ECSlidingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ECSlidingViewController.h"/>
+        </class>
+        <class className="FUIButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FUIButton.h"/>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
