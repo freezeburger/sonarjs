@@ -17,22 +17,7 @@
 
 @implementation DKArticleTableViewCell
 
-- (void)updateUI
-{
-    // calculate helpers for url and date
-    NSURL *url = [NSURL URLWithString:self.articleUrl];
-    NSString *hostname = [url host];
-    
-    NSDate *date = [[NSDate alloc] initWithTimeIntervalSince1970:self.articleCreated];
-    NSString *timeAgo = [date timeAgo];
-
-    // set outlets
-    self.titleLabel.text = self.articleTitle;
-    self.urlLabel.text = [NSString stringWithFormat:@"%@ at %@", timeAgo, hostname];
-    self.commentsLabel.text = [NSString stringWithFormat:@"%d up, %d down, %d comments",
-                          self.articleUpvotes, self.articleDownvotes, self.articleComments];
-
-}
+#pragma mark - Getters / Setters
 
 - (void)setArticleTitle:(NSString *)articleTitle
 {
@@ -70,20 +55,24 @@
     [self updateUI];
 }
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
+#pragma mark - View helpers
+
+- (void)updateUI
+{
+    // calculate helpers for url and date
+    NSURL *url = [NSURL URLWithString:self.articleUrl];
+    NSString *hostname = [url host];
+    
+    NSDate *date = [[NSDate alloc] initWithTimeIntervalSince1970:self.articleCreated];
+    NSString *timeAgo = [date timeAgo];
+
+    // set outlets
+    self.titleLabel.text = self.articleTitle;
+    self.urlLabel.text = [NSString stringWithFormat:@"%@ at %@", timeAgo, hostname];
+    self.commentsLabel.text = [NSString stringWithFormat:@"%d up, %d down, %d comments", self.articleUpvotes, self.articleDownvotes, self.articleComments];
+
 }
 
 @end
