@@ -83,7 +83,7 @@
                     <navigationItem key="navigationItem" id="Tz2-Bn-rob">
                         <nil key="title"/>
                         <barButtonItem key="backBarButtonItem" title="＜" id="b5K-Pr-Qp9"/>
-                        <barButtonItem key="leftBarButtonItem" title="M" id="V6E-CT-vnq">
+                        <barButtonItem key="leftBarButtonItem" image="profile.png" id="V6E-CT-vnq">
                             <connections>
                                 <action selector="handleMenuButton:" destination="u6E-b3-EnT" id="OjV-yz-blw"/>
                             </connections>
@@ -151,51 +151,20 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpZ-oR-41g">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="226" id="BZv-X7-cVB"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Top Articles">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXu-aa-fRb">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Latest Articles">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GzE-kh-5H1">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Feedback">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="BZT-oe-UZ6"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="powered by echojs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6d-12-dlb">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="GzE-kh-5H1" firstAttribute="trailing" secondItem="aXu-aa-fRb" secondAttribute="trailing" type="default" id="Flm-vV-XDV"/>
-                            <constraint firstItem="aXu-aa-fRb" firstAttribute="top" secondItem="lpZ-oR-41g" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="SZY-Ir-i0G"/>
+                            <constraint firstItem="BZT-oe-UZ6" firstAttribute="leading" secondItem="Rta-Rh-RSj" secondAttribute="leading" type="default" id="Hr6-AM-3EX"/>
+                            <constraint firstItem="BZT-oe-UZ6" firstAttribute="bottom" secondItem="Rta-Rh-RSj" secondAttribute="bottom" type="default" id="Jkf-rP-cWO"/>
+                            <constraint firstAttribute="bottom" secondItem="R6d-12-dlb" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="SyL-1y-mBa"/>
                             <constraint firstAttribute="bottom" secondItem="yd0-yN-Jta" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="TjG-M0-wxF"/>
-                            <constraint firstItem="GzE-kh-5H1" firstAttribute="top" secondItem="aXu-aa-fRb" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="U9X-Gk-4g4"/>
-                            <constraint firstItem="aXu-aa-fRb" firstAttribute="leading" secondItem="Rta-Rh-RSj" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="WY8-fe-T9W"/>
-                            <constraint firstItem="GzE-kh-5H1" firstAttribute="leading" secondItem="Rta-Rh-RSj" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="eAz-tg-mh5"/>
-                            <constraint firstItem="lpZ-oR-41g" firstAttribute="leading" secondItem="Rta-Rh-RSj" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="gq6-td-mkh"/>
-                            <constraint firstItem="aXu-aa-fRb" firstAttribute="trailing" secondItem="lpZ-oR-41g" secondAttribute="trailing" type="default" id="s4s-0m-K0g"/>
-                            <constraint firstItem="lpZ-oR-41g" firstAttribute="top" secondItem="Rta-Rh-RSj" secondAttribute="top" constant="20" symbolic="YES" type="default" id="yFJ-hL-2Sw"/>
+                            <constraint firstItem="BZT-oe-UZ6" firstAttribute="top" secondItem="Rta-Rh-RSj" secondAttribute="top" type="default" id="ayn-lY-NFj"/>
+                            <constraint firstItem="R6d-12-dlb" firstAttribute="leading" secondItem="Rta-Rh-RSj" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="hYm-uz-hPy"/>
                             <constraint firstItem="yd0-yN-Jta" firstAttribute="leading" secondItem="Rta-Rh-RSj" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="zoE-NZ-WcF"/>
                         </constraints>
                     </view>
@@ -309,8 +278,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Default.png" width="320" height="480"/>
         <image name="comments.png" width="22" height="22"/>
-        <image name="profile.png" width="44" height="44"/>
+        <image name="profile.png" width="22" height="22"/>
     </resources>
     <classes>
         <class className="DKArticleTableViewCell" superclassName="UITableViewCell">
@@ -324,6 +294,10 @@
         <class className="DKArticleTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DKArticleTableViewController.h"/>
             <relationships>
+                <relationship kind="action" name="handleMenuButton:"/>
+                <relationship kind="action" name="handleOrderButton:" candidateClass="UIButton"/>
+                <relationship kind="action" name="handlePullToRefresh:"/>
+                <relationship kind="action" name="handleRefreshButton:"/>
                 <relationship kind="outlet" name="orderButton" candidateClass="UIButton"/>
             </relationships>
         </class>
