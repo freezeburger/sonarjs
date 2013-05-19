@@ -31,6 +31,12 @@
 		1F31A75717312EDB004343FF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F31A75617312EDB004343FF /* UIKit.framework */; };
 		1F31A75917312EDB004343FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F31A75817312EDB004343FF /* Foundation.framework */; };
 		1F31A75B17312EDB004343FF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F31A75A17312EDB004343FF /* CoreGraphics.framework */; };
+		1F47004117492CCA0006EA6F /* TUSafariActivity.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F47002717492CC90006EA6F /* TUSafariActivity.strings */; };
+		1F47004217492CCA0006EA6F /* Safari.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F47003717492CC90006EA6F /* Safari.png */; };
+		1F47004317492CCA0006EA6F /* Safari@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F47003817492CC90006EA6F /* Safari@2x.png */; };
+		1F47004417492CCA0006EA6F /* Safari@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F47003917492CC90006EA6F /* Safari@2x~ipad.png */; };
+		1F47004517492CCA0006EA6F /* Safari~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F47003A17492CC90006EA6F /* Safari~ipad.png */; };
+		1F47004617492CCA0006EA6F /* TUSafariActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F47003E17492CC90006EA6F /* TUSafariActivity.m */; };
 		1F54031D1742928700388083 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F54031C1742928700388083 /* SystemConfiguration.framework */; };
 		1F54031F1742929000388083 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F54031E1742929000388083 /* MobileCoreServices.framework */; };
 		1F54036917429A9C00388083 /* comments.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F54032117429A9C00388083 /* comments.png */; };
@@ -110,6 +116,31 @@
 		1F31A75617312EDB004343FF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1F31A75817312EDB004343FF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1F31A75A17312EDB004343FF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1F47002817492CC90006EA6F /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/TUSafariActivity.strings; sourceTree = "<group>"; };
+		1F47002917492CC90006EA6F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/TUSafariActivity.strings; sourceTree = "<group>"; };
+		1F47002A17492CC90006EA6F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TUSafariActivity.strings; sourceTree = "<group>"; };
+		1F47002B17492CC90006EA6F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/TUSafariActivity.strings; sourceTree = "<group>"; };
+		1F47002C17492CC90006EA6F /* eu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = eu; path = eu.lproj/TUSafariActivity.strings; sourceTree = "<group>"; };
+		1F47002D17492CC90006EA6F /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/TUSafariActivity.strings; sourceTree = "<group>"; };
+		1F47002E17492CC90006EA6F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/TUSafariActivity.strings; sourceTree = "<group>"; };
+		1F47002F17492CC90006EA6F /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/TUSafariActivity.strings; sourceTree = "<group>"; };
+		1F47003017492CC90006EA6F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/TUSafariActivity.strings; sourceTree = "<group>"; };
+		1F47003117492CC90006EA6F /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/TUSafariActivity.strings; sourceTree = "<group>"; };
+		1F47003217492CC90006EA6F /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/TUSafariActivity.strings; sourceTree = "<group>"; };
+		1F47003317492CC90006EA6F /* no */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = no; path = no.lproj/TUSafariActivity.strings; sourceTree = "<group>"; };
+		1F47003417492CC90006EA6F /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/TUSafariActivity.strings; sourceTree = "<group>"; };
+		1F47003517492CC90006EA6F /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/TUSafariActivity.strings; sourceTree = "<group>"; };
+		1F47003617492CC90006EA6F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/TUSafariActivity.strings; sourceTree = "<group>"; };
+		1F47003717492CC90006EA6F /* Safari.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Safari.png; sourceTree = "<group>"; };
+		1F47003817492CC90006EA6F /* Safari@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Safari@2x.png"; sourceTree = "<group>"; };
+		1F47003917492CC90006EA6F /* Safari@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Safari@2x~ipad.png"; sourceTree = "<group>"; };
+		1F47003A17492CC90006EA6F /* Safari~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Safari~ipad.png"; sourceTree = "<group>"; };
+		1F47003B17492CC90006EA6F /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/TUSafariActivity.strings; sourceTree = "<group>"; };
+		1F47003C17492CC90006EA6F /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/TUSafariActivity.strings; sourceTree = "<group>"; };
+		1F47003D17492CC90006EA6F /* TUSafariActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUSafariActivity.h; sourceTree = "<group>"; };
+		1F47003E17492CC90006EA6F /* TUSafariActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUSafariActivity.m; sourceTree = "<group>"; };
+		1F47003F17492CC90006EA6F /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/TUSafariActivity.strings; sourceTree = "<group>"; };
+		1F47004017492CC90006EA6F /* zh_CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_CN; path = zh_CN.lproj/TUSafariActivity.strings; sourceTree = "<group>"; };
 		1F54031C1742928700388083 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1F54031E1742929000388083 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		1F54032117429A9C00388083 /* comments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comments.png; sourceTree = "<group>"; };
@@ -316,6 +347,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1F47002617492CC90006EA6F /* TUSafariActivity */ = {
+			isa = PBXGroup;
+			children = (
+				1F47002717492CC90006EA6F /* TUSafariActivity.strings */,
+				1F47003717492CC90006EA6F /* Safari.png */,
+				1F47003817492CC90006EA6F /* Safari@2x.png */,
+				1F47003917492CC90006EA6F /* Safari@2x~ipad.png */,
+				1F47003A17492CC90006EA6F /* Safari~ipad.png */,
+				1F47003D17492CC90006EA6F /* TUSafariActivity.h */,
+				1F47003E17492CC90006EA6F /* TUSafariActivity.m */,
+			);
+			path = TUSafariActivity;
+			sourceTree = "<group>";
+		};
 		1F54032017429A9C00388083 /* sonarJS */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,6 +391,7 @@
 		1F54033717429A9C00388083 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				1F47002617492CC90006EA6F /* TUSafariActivity */,
 				1F071574174908C50080B014 /* FlatUIKit */,
 				1F0715501748041B0080B014 /* SVPullToRefresh */,
 				1F0715461747DE1C0080B014 /* ECSlidingViewController */,
@@ -455,6 +501,17 @@
 				pt_BR,
 				ru,
 				zh_Hans,
+				cs,
+				eu,
+				ja,
+				ko,
+				no,
+				pl,
+				pt,
+				sk,
+				sv,
+				vi,
+				zh_CN,
 			);
 			mainGroup = 1F31A74A17312EDB004343FF;
 			productRefGroup = 1F31A75417312EDB004343FF /* Products */;
@@ -484,6 +541,11 @@
 				1F54038A17429D9900388083 /* Default-568h@2x.png in Resources */,
 				1F54038C17429DA100388083 /* Default.png in Resources */,
 				1F54038E17429DA800388083 /* Default@2x.png in Resources */,
+				1F47004117492CCA0006EA6F /* TUSafariActivity.strings in Resources */,
+				1F47004217492CCA0006EA6F /* Safari.png in Resources */,
+				1F47004317492CCA0006EA6F /* Safari@2x.png in Resources */,
+				1F47004417492CCA0006EA6F /* Safari@2x~ipad.png in Resources */,
+				1F47004517492CCA0006EA6F /* Safari~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,12 +591,39 @@
 				1F071599174908C50080B014 /* UISlider+FlatUI.m in Sources */,
 				1F07159A174908C50080B014 /* UIStepper+FlatUI.m in Sources */,
 				1F07159B174908C50080B014 /* UITabBar+FlatUI.m in Sources */,
+				1F47004617492CCA0006EA6F /* TUSafariActivity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		1F47002717492CC90006EA6F /* TUSafariActivity.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F47002817492CC90006EA6F /* cs */,
+				1F47002917492CC90006EA6F /* de */,
+				1F47002A17492CC90006EA6F /* en */,
+				1F47002B17492CC90006EA6F /* es */,
+				1F47002C17492CC90006EA6F /* eu */,
+				1F47002D17492CC90006EA6F /* fi */,
+				1F47002E17492CC90006EA6F /* fr */,
+				1F47002F17492CC90006EA6F /* it */,
+				1F47003017492CC90006EA6F /* ja */,
+				1F47003117492CC90006EA6F /* ko */,
+				1F47003217492CC90006EA6F /* nl */,
+				1F47003317492CC90006EA6F /* no */,
+				1F47003417492CC90006EA6F /* pl */,
+				1F47003517492CC90006EA6F /* pt */,
+				1F47003617492CC90006EA6F /* ru */,
+				1F47003B17492CC90006EA6F /* sk */,
+				1F47003C17492CC90006EA6F /* sv */,
+				1F47003F17492CC90006EA6F /* vi */,
+				1F47004017492CC90006EA6F /* zh_CN */,
+			);
+			name = TUSafariActivity.strings;
+			sourceTree = "<group>";
+		};
 		1F54033317429A9C00388083 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

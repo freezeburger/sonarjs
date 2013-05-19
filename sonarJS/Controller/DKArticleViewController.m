@@ -9,6 +9,7 @@
 #import "DKArticleViewController.h"
 #import "DKCommentsViewController.h"
 #import "UIApplication+NetworkActivityManager.h"
+#import "TUSafariActivity.h"
 
 #define DK_DEFAULTS_ARTICLE_ENABLED @"articleEnabled"
 
@@ -151,7 +152,9 @@
 
 - (IBAction)handleActionButton:(id)sender {
     NSArray *postItems = @[self.articleTitle, [NSURL URLWithString:self.articleUrl]];
-    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:postItems applicationActivities:nil];
+    NSArray *activities = @[[[TUSafariActivity alloc] init]];
+
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:postItems applicationActivities:activities];
     [self presentViewController:activityVC animated:YES completion:nil];
 }
 
