@@ -14,5 +14,8 @@ typedef enum _DKEchoJSOrderMode {
 } DKEchoJSOrderMode;
 
 @interface DKEchoJS : NSObject
+
++ (DKEchoJS *)sharedInstance;
+
 - (void)retrieveArticlesOrderedBy:(DKEchoJSOrderMode)orderMode startingAtIndex:(NSInteger)index withCount:(NSInteger)count success:(void (^)(id articles))success;
 @end

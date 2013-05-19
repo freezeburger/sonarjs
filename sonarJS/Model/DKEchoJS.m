@@ -11,6 +11,13 @@
 
 @implementation DKEchoJS
 
++ (DKEchoJS *)sharedInstance
+{
+    static DKEchoJS *shared = nil;
+    if (!shared) shared = [[DKEchoJS alloc] init];
+    return shared;
+}
+
 - (void)retrieveArticlesOrderedBy:(DKEchoJSOrderMode)orderMode startingAtIndex:(NSInteger)index withCount:(NSInteger)count success:(void (^)(id JSON))success
 {
     NSString *urlString = (orderMode == DKEchoJSOrderModeTop) ?

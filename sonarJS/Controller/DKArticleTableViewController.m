@@ -19,7 +19,6 @@
 
 @interface DKArticleTableViewController ()
 @property (strong, nonatomic) NSMutableArray *data;
-@property (strong, nonatomic) DKEchoJS *echoJS;
 @property (nonatomic) BOOL showsLatest;
 @property (nonatomic) NSInteger currentPage;
 @property (weak, nonatomic) IBOutlet UIButton *orderButton;
@@ -40,15 +39,7 @@
     // add infinite scrolling
     __weak DKArticleTableViewController *weakSelf = self;
     [self.tableView addInfiniteScrollingWithActionHandler:^{
-        weakSelf.currentPage += 1;
-        [weakSelf.echoJS retrieveArticlesOrderedBy:(weakSelf.showsLatest ? DKEchoJSOrderModeLatest :  DKEchoJSOrderModeTop) startingAtIndex:weakSelf.currentPage * DK_ARTICLE_PAGE_COUNT withCount:DK_ARTICLE_PAGE_COUNT success:^(id JSON){
-            
-            [weakSelf.data addObjectsFromArray:JSON];
-            [weakSelf updateUI];
-
-            [weakSelf.tableView.infiniteScrollingView stopAnimating];
-        }];
-
+        [weakSelf handleInfiniteScroll:nil];
     }];
     
     self.currentPage = 0;
@@ -71,12 +62,6 @@
 {
     _data = data;
     [self updateUI];
-}
-
-- (DKEchoJS *)echoJS
-{
-    if (!_echoJS) _echoJS = [[DKEchoJS alloc] init];
-    return _echoJS;
 }
 
 
@@ -119,7 +104,7 @@
     
     self.currentPage = 0;
     
-    [self.echoJS retrieveArticlesOrderedBy:(self.showsLatest ? DKEchoJSOrderModeLatest :  DKEchoJSOrderModeTop) startingAtIndex:DK_ARTICLE_START_INDEX withCount:DK_ARTICLE_PAGE_COUNT success:^(id articles){
+    [[DKEchoJS sharedInstance] retrieveArticlesOrderedBy:(self.showsLatest ? DKEchoJSOrderModeLatest :  DKEchoJSOrderModeTop) startingAtIndex:DK_ARTICLE_START_INDEX withCount:DK_ARTICLE_PAGE_COUNT success:^(id articles){
         self.data = [articles mutableCopy]; // this will update the ui, so we need to call it here!!
 
         [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
@@ -135,13 +120,26 @@
     [self.refreshControl beginRefreshing];
     [[UIApplication sharedApplication] showNetworkActivityIndicator];
     
-    [self.echoJS retrieveArticlesOrderedBy:(self.showsLatest ? DKEchoJSOrderModeLatest :  DKEchoJSOrderModeTop) startingAtIndex:DK_ARTICLE_START_INDEX withCount:DK_ARTICLE_PAGE_COUNT success:^(id articles){
+    [[DKEchoJS sharedInstance] retrieveArticlesOrderedBy:(self.showsLatest ? DKEchoJSOrderModeLatest :  DKEchoJSOrderModeTop) startingAtIndex:DK_ARTICLE_START_INDEX withCount:DK_ARTICLE_PAGE_COUNT success:^(id articles){
         self.data = [articles mutableCopy]; // this will update the ui, so we need to call it here!!
         
         [self.refreshControl endRefreshing];
     
         [[UIApplication sharedApplication] hideNetworkActivityIndicator];
     }];
+}
+
+- (IBAction)handleInfiniteScroll:(id)sender
+{
+    self.currentPage += 1;
+    [[DKEchoJS sharedInstance] retrieveArticlesOrderedBy:(self.showsLatest ? DKEchoJSOrderModeLatest :  DKEchoJSOrderModeTop) startingAtIndex:self.currentPage * DK_ARTICLE_PAGE_COUNT withCount:DK_ARTICLE_PAGE_COUNT success:^(id JSON){
+        
+        [self.data addObjectsFromArray:JSON];
+        [self updateUI];
+        
+        [self.tableView.infiniteScrollingView stopAnimating];
+    }];
+
 }
 
 - (IBAction)handleMenuButton:(id)sender
