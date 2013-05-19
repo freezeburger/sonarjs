@@ -30,6 +30,8 @@
     
     [[UIBarButtonItem appearance] setTitleTextAttributes:@{UITextAttributeTextShadowColor: redColor} forState:UIControlStateNormal];
     [UIBarButtonItem configureFlatButtonsWithColor:darkRedColor highlightedColor:reallyDark cornerRadius:3];
+    
+    [[UIToolbar appearance] setBackgroundImage:[[UIImage alloc] init] forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsDefault];
 }
 
 

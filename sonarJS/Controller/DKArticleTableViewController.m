@@ -14,6 +14,7 @@
 #import "ECSlidingViewController.h"
 #import "UIScrollView+SVInfiniteScrolling.h"
 
+#define DK_DEFAULTS_SHOWS_LATEST @"showsLatest"
 #define DK_ARTICLE_START_INDEX 0
 #define DK_ARTICLE_PAGE_COUNT 30
 
@@ -32,6 +33,10 @@
 {
     [super viewDidLoad];
     [self configureCustomUI];
+    
+    // load state of order toggle
+    self.showsLatest = [[NSUserDefaults standardUserDefaults] boolForKey:DK_DEFAULTS_SHOWS_LATEST];
+    self.orderButton.selected = self.showsLatest;
     
     // ios bug: we have to chain the target / action in code
     [self.refreshControl addTarget:self action:@selector(handlePullToRefresh:) forControlEvents:UIControlEventValueChanged];
@@ -62,6 +67,13 @@
 {
     _data = data;
     [self updateUI];
+}
+
+- (void)setShowsLatest:(BOOL)showsLatest
+{
+    [[NSUserDefaults standardUserDefaults] setBool:showsLatest forKey:DK_DEFAULTS_SHOWS_LATEST];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    _showsLatest = showsLatest;
 }
 
 

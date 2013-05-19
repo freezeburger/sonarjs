@@ -14,6 +14,9 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *commentsButton;
 @property (weak, nonatomic) IBOutlet UIWebView *articleWebView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+@property (weak, nonatomic) IBOutlet UIToolbar *articleActionsToolbar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *articleBackButton;
+@property (weak, nonatomic) IBOutlet UIButton *articleReadingModeButton;
 @end
 
 @implementation DKArticleViewController
@@ -25,11 +28,60 @@
     [super viewDidLoad];
     
     self.articleWebView.delegate = self;
+    
+    // disable back button per default
+    self.articleBackButton.enabled = NO;
+    
     [self updateUI];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    if ([self isMovingFromParentViewController] || [self isMovingToParentViewController]) {
+        // hide view initially
+        self.articleActionsToolbar.hidden = YES;
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    if ([self isMovingFromParentViewController] || [self isMovingToParentViewController]) {
+        // animate actionbar
+        self.articleActionsToolbar.hidden = NO;
+        CGRect frame = self.articleActionsToolbar.frame;
+        frame.origin.y = frame.origin.y + self.articleActionsToolbar.frame.size.height;
+        self.articleActionsToolbar.frame = frame;
+        [UIView animateWithDuration:0.2f animations:^{
+            CGRect frame = self.articleActionsToolbar.frame;
+            frame.origin.y = frame.origin.y - frame.size.height;
+            self.articleActionsToolbar.frame = frame;
+        }];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+
+    if ([self isMovingFromParentViewController] || [self isMovingToParentViewController]) {
+        // animate actionbar
+        [UIView animateWithDuration:0.2f animations:^{
+            CGRect frame = self.articleActionsToolbar.frame;
+            frame.origin.y = frame.origin.y + frame.size.height;
+            self.articleActionsToolbar.frame = frame;
+        }];
+    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
+    [super viewWillDisappear:animated];
+    
+    // remove loading animation if webview still loads
     if ([self isMovingFromParentViewController] && self.articleWebView.isLoading) {
         [[UIApplication sharedApplication] hideNetworkActivityIndicator];
         [self.articleWebView stopLoading];
@@ -90,6 +142,18 @@
     }
 }
 
+- (IBAction)handleBackButton:(id)sender
+{
+    [self.articleWebView goBack];
+    self.articleBackButton.enabled = self.articleWebView.canGoBack;
+}
+
+- (IBAction)handleActionButton:(id)sender {
+    NSArray *postItems = @[self.articleTitle, [NSURL URLWithString:self.articleUrl]];
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:postItems applicationActivities:nil];
+    [self presentViewController:activityVC animated:YES completion:nil];
+}
+
 
 
 #pragma mark - webview delegate
@@ -98,18 +162,21 @@
 {
     [[UIApplication sharedApplication] showNetworkActivityIndicator];
     [self.spinner startAnimating];
+    self.articleBackButton.enabled = self.articleWebView.canGoBack;
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     [[UIApplication sharedApplication] hideNetworkActivityIndicator];
     [self.spinner stopAnimating];
+    self.articleBackButton.enabled = self.articleWebView.canGoBack;
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     [[UIApplication sharedApplication] hideNetworkActivityIndicator];
     [self.spinner stopAnimating];
+    self.articleBackButton.enabled = self.articleWebView.canGoBack;
 }
 
 @end

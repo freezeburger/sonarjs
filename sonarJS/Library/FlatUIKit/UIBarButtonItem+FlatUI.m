@@ -28,25 +28,36 @@
                                                                           barMetrics:UIBarMetricsLandscapePhone
                                                                         cornerRadius:2];
     
-    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButtonPortraitImage
-                                                      forState:UIControlStateNormal
-                                                    barMetrics:UIBarMetricsDefault];
-    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButtonLandscapeImage
-                                                      forState:UIControlStateNormal
-                                                    barMetrics:UIBarMetricsLandscapePhone];
-    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:highlightedBackButtonPortraitImage
-                                                      forState:UIControlStateHighlighted
-                                                    barMetrics:UIBarMetricsDefault];
-    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:highlightedBackButtonLandscapeImage
-                                                      forState:UIControlStateHighlighted
-                                                    barMetrics:UIBarMetricsLandscapePhone];
+    id appearance = [UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], [UINavigationController class], nil];
     
-    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(1.0f, 1.0f) forBarMetrics:UIBarMetricsDefault];
-    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(1.0f, 1.0f) forBarMetrics:UIBarMetricsLandscapePhone];
+    [appearance setBackButtonBackgroundImage:backButtonPortraitImage
+                                    forState:UIControlStateNormal
+                                  barMetrics:UIBarMetricsDefault];
+    [appearance setBackButtonBackgroundImage:backButtonLandscapeImage
+                                    forState:UIControlStateNormal
+                                  barMetrics:UIBarMetricsLandscapePhone];
+    [appearance setBackButtonBackgroundImage:highlightedBackButtonPortraitImage
+                                    forState:UIControlStateHighlighted
+                                  barMetrics:UIBarMetricsDefault];
+    [appearance setBackButtonBackgroundImage:highlightedBackButtonLandscapeImage
+                                    forState:UIControlStateHighlighted
+                                  barMetrics:UIBarMetricsLandscapePhone];
+    
+    [appearance setBackButtonTitlePositionAdjustment:UIOffsetMake(1.0f, 1.0f) forBarMetrics:UIBarMetricsDefault];
+    [appearance setBackButtonTitlePositionAdjustment:UIOffsetMake(1.0f, 1.0f) forBarMetrics:UIBarMetricsLandscapePhone];
     
     UIImage *buttonImage = [UIImage imageWithColor:color cornerRadius:cornerRadius];
-    [[UIBarButtonItem appearance] setBackgroundImage:buttonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [appearance setBackgroundImage:buttonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     
+}
+
+- (void) removeTitleShadow {
+    NSMutableDictionary *titleTextAttributes = [[self titleTextAttributesForState:UIControlStateNormal] mutableCopy];
+    if (!titleTextAttributes) {
+        titleTextAttributes = [NSMutableDictionary dictionary];
+    }
+    [titleTextAttributes setValue:[NSValue valueWithUIOffset:UIOffsetMake(0, 0)] forKey:UITextAttributeTextShadowOffset];
+    [self setTitleTextAttributes:titleTextAttributes forState:UIControlStateNormal];
 }
 
 @end

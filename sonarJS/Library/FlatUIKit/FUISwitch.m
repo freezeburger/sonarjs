@@ -85,7 +85,7 @@
     
     //thumb image
     CGFloat insetFraction = .75;
-    CGFloat thumbEdgeSize = contentHeight * insetFraction;
+    CGFloat thumbEdgeSize = floorf(contentHeight * insetFraction);
     CGFloat thumbInset = (contentHeight - thumbEdgeSize) / 2;
     self.thumbView.frame = CGRectMake((self.internalContainer.contentSize.width - contentHeight) / 2 + thumbInset, thumbInset, thumbEdgeSize, thumbEdgeSize);
     self.thumbView.layer.cornerRadius = thumbEdgeSize / 2;
@@ -96,6 +96,7 @@
     right.origin.x = self.internalContainer.contentSize.width - left.size.width;
     self.offLabel.frame = right;
     self.onLabel.frame = left;
+    [self setOn:_on];
 }
 
 - (void) setOn:(BOOL)on {
