@@ -18,8 +18,6 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 @property (weak, nonatomic) IBOutlet UIToolbar *articleActionsToolbar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *articleBackButton;
-@property (weak, nonatomic) IBOutlet UIButton *articleReadingModeButton;
-@property (nonatomic) BOOL articleEnabled;
 @end
 
 @implementation DKArticleViewController
@@ -34,9 +32,6 @@
     
     // disable back button per default
     self.articleBackButton.enabled = NO;
-    
-    // read readability / article state from store
-    self.articleEnabled = [[NSUserDefaults standardUserDefaults] boolForKey:DK_DEFAULTS_ARTICLE_ENABLED];
     
     [self updateUI];
 }
@@ -122,18 +117,6 @@
     [self updateUI];
 }
 
-- (void)setArticleEnabled:(BOOL)articleEnabled
-{
-    _articleEnabled = articleEnabled;
-    
-    // persist
-    [[NSUserDefaults standardUserDefaults] setBool:articleEnabled forKey:DK_DEFAULTS_ARTICLE_ENABLED];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    // update UI
-    self.articleReadingModeButton.selected = articleEnabled;
-}
-
 
 
 #pragma mark - UI
@@ -170,11 +153,6 @@
     NSArray *postItems = @[self.articleTitle, [NSURL URLWithString:self.articleUrl]];
     UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:postItems applicationActivities:nil];
     [self presentViewController:activityVC animated:YES completion:nil];
-}
-
-- (IBAction)handleReadingModeButton:(id)sender
-{
-    self.articleEnabled = !self.articleEnabled;
 }
 
 

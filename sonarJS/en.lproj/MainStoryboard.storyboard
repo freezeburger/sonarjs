@@ -166,7 +166,7 @@
             </objects>
             <point key="canvasLocation" x="755" y="626"/>
         </scene>
-        <!--Article View Controller-->
+        <!--Article View Controller - Article-->
         <scene sceneID="ocR-71-Xf2">
             <objects>
                 <viewController id="UfE-3q-fSp" customClass="DKArticleViewController" sceneMemberID="viewController">
@@ -210,27 +210,8 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="fxI-zU-Qr1">
-                        <nil key="title"/>
+                    <navigationItem key="navigationItem" title="Article" id="fxI-zU-Qr1">
                         <barButtonItem key="backBarButtonItem" title="＜" id="Yc3-8R-qFe"/>
-                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RJP-y2-Dvg">
-                            <rect key="frame" x="65" y="6" width="190" height="33"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                            <state key="normal" title="Readability ▾">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="selected" title="Article ▾">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="highlighted">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="handleReadingModeButton:" destination="UfE-3q-fSp" eventType="touchUpInside" id="1VP-4t-3is"/>
-                            </connections>
-                        </button>
                         <barButtonItem key="rightBarButtonItem" image="comments.png" id="Frd-dx-3XV">
                             <connections>
                                 <segue destination="e0h-rE-Z09" kind="push" identifier="Show Comments" id="MsJ-W7-gjk"/>
@@ -240,7 +221,6 @@
                     <connections>
                         <outlet property="articleActionsToolbar" destination="T1o-tR-6tM" id="LBm-F1-nkl"/>
                         <outlet property="articleBackButton" destination="FI5-b3-Hsc" id="hmX-rd-YFU"/>
-                        <outlet property="articleReadingModeButton" destination="RJP-y2-Dvg" id="HDZ-ro-qUt"/>
                         <outlet property="articleWebView" destination="gww-PC-aKn" id="ET1-1f-0aM"/>
                         <outlet property="commentsButton" destination="Frd-dx-3XV" id="G99-eh-2o1"/>
                         <outlet property="spinner" destination="31D-Za-uSX" id="fiO-f4-GGg"/>
@@ -343,10 +323,8 @@
             <relationships>
                 <relationship kind="action" name="handleActionButton:"/>
                 <relationship kind="action" name="handleBackButton:"/>
-                <relationship kind="action" name="handleReadingModeButton:"/>
                 <relationship kind="outlet" name="articleActionsToolbar" candidateClass="UIToolbar"/>
                 <relationship kind="outlet" name="articleBackButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="articleReadingModeButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="articleWebView" candidateClass="UIWebView"/>
                 <relationship kind="outlet" name="commentsButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="spinner" candidateClass="UIActivityIndicatorView"/>
