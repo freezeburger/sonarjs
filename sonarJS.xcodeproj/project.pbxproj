@@ -37,6 +37,11 @@
 		1F47004417492CCA0006EA6F /* Safari@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F47003917492CC90006EA6F /* Safari@2x~ipad.png */; };
 		1F47004517492CCA0006EA6F /* Safari~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F47003A17492CC90006EA6F /* Safari~ipad.png */; };
 		1F47004617492CCA0006EA6F /* TUSafariActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F47003E17492CC90006EA6F /* TUSafariActivity.m */; };
+		1F47004E17492D970006EA6F /* ARChromeActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F47004917492D970006EA6F /* ARChromeActivity.m */; };
+		1F47004F17492D970006EA6F /* ARChromeActivity.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F47004A17492D970006EA6F /* ARChromeActivity.png */; };
+		1F47005017492D970006EA6F /* ARChromeActivity@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F47004B17492D970006EA6F /* ARChromeActivity@2x.png */; };
+		1F47005117492D970006EA6F /* ARChromeActivity@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F47004C17492D970006EA6F /* ARChromeActivity@2x~ipad.png */; };
+		1F47005217492D970006EA6F /* ARChromeActivity~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F47004D17492D970006EA6F /* ARChromeActivity~ipad.png */; };
 		1F54031D1742928700388083 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F54031C1742928700388083 /* SystemConfiguration.framework */; };
 		1F54031F1742929000388083 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F54031E1742929000388083 /* MobileCoreServices.framework */; };
 		1F54036917429A9C00388083 /* comments.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F54032117429A9C00388083 /* comments.png */; };
@@ -141,6 +146,12 @@
 		1F47003E17492CC90006EA6F /* TUSafariActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUSafariActivity.m; sourceTree = "<group>"; };
 		1F47003F17492CC90006EA6F /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/TUSafariActivity.strings; sourceTree = "<group>"; };
 		1F47004017492CC90006EA6F /* zh_CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_CN; path = zh_CN.lproj/TUSafariActivity.strings; sourceTree = "<group>"; };
+		1F47004817492D970006EA6F /* ARChromeActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARChromeActivity.h; sourceTree = "<group>"; };
+		1F47004917492D970006EA6F /* ARChromeActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARChromeActivity.m; sourceTree = "<group>"; };
+		1F47004A17492D970006EA6F /* ARChromeActivity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ARChromeActivity.png; sourceTree = "<group>"; };
+		1F47004B17492D970006EA6F /* ARChromeActivity@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ARChromeActivity@2x.png"; sourceTree = "<group>"; };
+		1F47004C17492D970006EA6F /* ARChromeActivity@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ARChromeActivity@2x~ipad.png"; sourceTree = "<group>"; };
+		1F47004D17492D970006EA6F /* ARChromeActivity~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ARChromeActivity~ipad.png"; sourceTree = "<group>"; };
 		1F54031C1742928700388083 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1F54031E1742929000388083 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		1F54032117429A9C00388083 /* comments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comments.png; sourceTree = "<group>"; };
@@ -361,6 +372,19 @@
 			path = TUSafariActivity;
 			sourceTree = "<group>";
 		};
+		1F47004717492D970006EA6F /* ARChromeActivity */ = {
+			isa = PBXGroup;
+			children = (
+				1F47004817492D970006EA6F /* ARChromeActivity.h */,
+				1F47004917492D970006EA6F /* ARChromeActivity.m */,
+				1F47004A17492D970006EA6F /* ARChromeActivity.png */,
+				1F47004B17492D970006EA6F /* ARChromeActivity@2x.png */,
+				1F47004C17492D970006EA6F /* ARChromeActivity@2x~ipad.png */,
+				1F47004D17492D970006EA6F /* ARChromeActivity~ipad.png */,
+			);
+			path = ARChromeActivity;
+			sourceTree = "<group>";
+		};
 		1F54032017429A9C00388083 /* sonarJS */ = {
 			isa = PBXGroup;
 			children = (
@@ -391,6 +415,7 @@
 		1F54033717429A9C00388083 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				1F47004717492D970006EA6F /* ARChromeActivity */,
 				1F47002617492CC90006EA6F /* TUSafariActivity */,
 				1F071574174908C50080B014 /* FlatUIKit */,
 				1F0715501748041B0080B014 /* SVPullToRefresh */,
@@ -546,6 +571,10 @@
 				1F47004317492CCA0006EA6F /* Safari@2x.png in Resources */,
 				1F47004417492CCA0006EA6F /* Safari@2x~ipad.png in Resources */,
 				1F47004517492CCA0006EA6F /* Safari~ipad.png in Resources */,
+				1F47004F17492D970006EA6F /* ARChromeActivity.png in Resources */,
+				1F47005017492D970006EA6F /* ARChromeActivity@2x.png in Resources */,
+				1F47005117492D970006EA6F /* ARChromeActivity@2x~ipad.png in Resources */,
+				1F47005217492D970006EA6F /* ARChromeActivity~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +621,7 @@
 				1F07159A174908C50080B014 /* UIStepper+FlatUI.m in Sources */,
 				1F07159B174908C50080B014 /* UITabBar+FlatUI.m in Sources */,
 				1F47004617492CCA0006EA6F /* TUSafariActivity.m in Sources */,
+				1F47004E17492D970006EA6F /* ARChromeActivity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,8 +28,8 @@
     [navCon.navigationBar configureFlatNavigationBarWithColor:redColor];
     [navCon.navigationBar setTitleTextAttributes:@{UITextAttributeTextShadowColor: redColor}];
     
-    [[UIBarButtonItem appearance] setTitleTextAttributes:@{UITextAttributeTextShadowColor: redColor} forState:UIControlStateNormal];
-    [UIBarButtonItem configureFlatButtonsWithColor:darkRedColor highlightedColor:reallyDark cornerRadius:3];
+    [[UIBarButtonItem appearanceWhenContainedIn:[ECSlidingViewController class], nil] setTitleTextAttributes:@{UITextAttributeTextShadowColor: redColor} forState:UIControlStateNormal];
+    [UIBarButtonItem configureFlatButtonsWithColor:darkRedColor highlightedColor:reallyDark cornerRadius:3 whenContainedIn:[ECSlidingViewController class]];
     
     [[UIToolbar appearance] setBackgroundImage:[[UIImage alloc] init] forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsDefault];
 }

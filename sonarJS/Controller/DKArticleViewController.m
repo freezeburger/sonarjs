@@ -10,6 +10,8 @@
 #import "DKCommentsViewController.h"
 #import "UIApplication+NetworkActivityManager.h"
 #import "TUSafariActivity.h"
+#import "ARChromeActivity.h"
+#import "UIBarButtonItem+FlatUI.h"
 
 #define DK_DEFAULTS_ARTICLE_ENABLED @"articleEnabled"
 
@@ -152,7 +154,7 @@
 
 - (IBAction)handleActionButton:(id)sender {
     NSArray *postItems = @[self.articleTitle, [NSURL URLWithString:self.articleUrl]];
-    NSArray *activities = @[[[TUSafariActivity alloc] init]];
+    NSArray *activities = @[[[TUSafariActivity alloc] init], [[ARChromeActivity alloc] init]];
 
     UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:postItems applicationActivities:activities];
     [self presentViewController:activityVC animated:YES completion:nil];
