@@ -42,6 +42,10 @@
 		1F47005017492D970006EA6F /* ARChromeActivity@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F47004B17492D970006EA6F /* ARChromeActivity@2x.png */; };
 		1F47005117492D970006EA6F /* ARChromeActivity@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F47004C17492D970006EA6F /* ARChromeActivity@2x~ipad.png */; };
 		1F47005217492D970006EA6F /* ARChromeActivity~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F47004D17492D970006EA6F /* ARChromeActivity~ipad.png */; };
+		1F470055174BDBFA0006EA6F /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F470053174BDBFA0006EA6F /* back@2x.png */; };
+		1F470056174BDBFA0006EA6F /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F470054174BDBFA0006EA6F /* back.png */; };
+		1F470059174BDCC00006EA6F /* barback@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F470057174BDCC00006EA6F /* barback@2x.png */; };
+		1F47005A174BDCC00006EA6F /* barback.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F470058174BDCC00006EA6F /* barback.png */; };
 		1F54031D1742928700388083 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F54031C1742928700388083 /* SystemConfiguration.framework */; };
 		1F54031F1742929000388083 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F54031E1742929000388083 /* MobileCoreServices.framework */; };
 		1F54036917429A9C00388083 /* comments.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F54032117429A9C00388083 /* comments.png */; };
@@ -152,6 +156,10 @@
 		1F47004B17492D970006EA6F /* ARChromeActivity@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ARChromeActivity@2x.png"; sourceTree = "<group>"; };
 		1F47004C17492D970006EA6F /* ARChromeActivity@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ARChromeActivity@2x~ipad.png"; sourceTree = "<group>"; };
 		1F47004D17492D970006EA6F /* ARChromeActivity~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ARChromeActivity~ipad.png"; sourceTree = "<group>"; };
+		1F470053174BDBFA0006EA6F /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
+		1F470054174BDBFA0006EA6F /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		1F470057174BDCC00006EA6F /* barback@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barback@2x.png"; sourceTree = "<group>"; };
+		1F470058174BDCC00006EA6F /* barback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barback.png; sourceTree = "<group>"; };
 		1F54031C1742928700388083 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1F54031E1742929000388083 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		1F54032117429A9C00388083 /* comments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comments.png; sourceTree = "<group>"; };
@@ -234,6 +242,10 @@
 		1F07153A17477F510080B014 /* Application Support */ = {
 			isa = PBXGroup;
 			children = (
+				1F470057174BDCC00006EA6F /* barback@2x.png */,
+				1F470058174BDCC00006EA6F /* barback.png */,
+				1F470053174BDBFA0006EA6F /* back@2x.png */,
+				1F470054174BDBFA0006EA6F /* back.png */,
 				1F54033117429A9C00388083 /* DKAppDelegate.h */,
 				1F54033217429A9C00388083 /* DKAppDelegate.m */,
 				1F54033317429A9C00388083 /* InfoPlist.strings */,
@@ -575,6 +587,10 @@
 				1F47005017492D970006EA6F /* ARChromeActivity@2x.png in Resources */,
 				1F47005117492D970006EA6F /* ARChromeActivity@2x~ipad.png in Resources */,
 				1F47005217492D970006EA6F /* ARChromeActivity~ipad.png in Resources */,
+				1F470055174BDBFA0006EA6F /* back@2x.png in Resources */,
+				1F470056174BDBFA0006EA6F /* back.png in Resources */,
+				1F470059174BDCC00006EA6F /* barback@2x.png in Resources */,
+				1F47005A174BDCC00006EA6F /* barback.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
