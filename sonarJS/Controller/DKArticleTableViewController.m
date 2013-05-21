@@ -48,6 +48,7 @@
     }];
     
     self.currentPage = 0;
+
     
     // initially load data
     [self handleRefreshButton:nil];
@@ -55,8 +56,16 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     self.slidingViewController.underLeftViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"Menu"];
     self.slidingViewController.anchorRightRevealAmount = 280.0f;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+
+    self.navigationController.toolbarHidden = YES;
 }
 
 

@@ -19,7 +19,6 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *commentsButton;
 @property (weak, nonatomic) IBOutlet UIWebView *articleWebView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
-@property (weak, nonatomic) IBOutlet UIToolbar *articleActionsToolbar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *articleBackButton;
 @end
 
@@ -43,42 +42,8 @@
 {
     [super viewWillAppear:animated];
     
-    if ([self isMovingFromParentViewController] || [self isMovingToParentViewController]) {
-        // hide view initially
-        self.articleActionsToolbar.hidden = YES;
-    }
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    if ([self isMovingFromParentViewController] || [self isMovingToParentViewController]) {
-        // animate actionbar
-        self.articleActionsToolbar.hidden = NO;
-        CGRect frame = self.articleActionsToolbar.frame;
-        frame.origin.y = frame.origin.y + self.articleActionsToolbar.frame.size.height;
-        self.articleActionsToolbar.frame = frame;
-        [UIView animateWithDuration:0.2f animations:^{
-            CGRect frame = self.articleActionsToolbar.frame;
-            frame.origin.y = frame.origin.y - frame.size.height;
-            self.articleActionsToolbar.frame = frame;
-        }];
-    }
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-
-    if ([self isMovingFromParentViewController] || [self isMovingToParentViewController]) {
-        // animate actionbar
-        [UIView animateWithDuration:0.2f animations:^{
-            CGRect frame = self.articleActionsToolbar.frame;
-            frame.origin.y = frame.origin.y + frame.size.height;
-            self.articleActionsToolbar.frame = frame;
-        }];
-    }
+    // show toolbar
+    self.navigationController.toolbarHidden = NO;
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -89,6 +54,7 @@
     if ([self isMovingFromParentViewController] && self.articleWebView.isLoading) {
         [[UIApplication sharedApplication] hideNetworkActivityIndicator];
         [self.articleWebView stopLoading];
+        self.navigationController.toolbarHidden = YES;
     }
 }
 
