@@ -310,57 +310,6 @@
         <image name="comments.png" width="22" height="22"/>
         <image name="profile.png" width="22" height="22"/>
     </resources>
-    <classes>
-        <class className="DKArticleTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DKArticleTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="commentsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="urlLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DKArticleTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DKArticleTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="handleInfiniteScroll:"/>
-                <relationship kind="action" name="handleMenuButton:"/>
-                <relationship kind="action" name="handleOrderButton:" candidateClass="UIButton"/>
-                <relationship kind="action" name="handlePullToRefresh:"/>
-                <relationship kind="action" name="handleRefreshButton:"/>
-                <relationship kind="outlet" name="orderButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="DKArticleViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DKArticleViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="articleBackButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="articleWebView" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="commentsButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="spinner" candidateClass="UIActivityIndicatorView"/>
-            </relationships>
-        </class>
-        <class className="DKCommentTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DKCommentTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="commentTextView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="DKCommentsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DKCommentsTableViewController.h"/>
-        </class>
-        <class className="ECSlidingViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ECSlidingViewController.h"/>
-        </class>
-        <class className="FUIButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FUIButton.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="UIRefreshControl" superclassName="UIControl">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIRefreshControl.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

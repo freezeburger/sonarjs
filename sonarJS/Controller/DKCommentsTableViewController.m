@@ -101,7 +101,10 @@
 {
     NSString *comment = [self.comments[indexPath.item] objectForKey:@"body"];
     
-    CGSize size = [comment sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:[[UIScreen mainScreen] bounds].size];
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    screenSize.width -= 80.0f;
+    CGSize size = [comment sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:screenSize];
+    size.height += 80.0f;
     return size.height;
 }
 
