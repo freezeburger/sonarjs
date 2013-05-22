@@ -47,6 +47,9 @@
         [weakSelf handleInfiniteScroll:nil];
     }];
     
+    // add side menu
+    self.slidingViewController.underLeftViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"Menu"];
+    
     self.currentPage = 0;
 
     
@@ -57,15 +60,17 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.slidingViewController.underLeftViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"Menu"];
+
+    // set side menu position
     self.slidingViewController.anchorRightRevealAmount = 280.0f;
+
+    [self animateToolbarDisappear];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillDisappear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
-
-    self.navigationController.toolbarHidden = YES;
+    [super viewWillDisappear:animated];
+    [self animateToolbarAppear];
 }
 
 
@@ -95,9 +100,18 @@
 }
 
 - (void)updateUI
-{    
-    // complete reload, should be changed later to higher performance
-    [self.tableView reloadData];
+{
+    [self.tableView reloadData]; // change to partial reload for higher performance
+}
+
+- (void)animateToolbarAppear
+{
+    self.navigationController.toolbarHidden = NO;
+}
+
+- (void)animateToolbarDisappear
+{
+    self.navigationController.toolbarHidden = YES;
 }
 
 
@@ -175,7 +189,6 @@
     self.data = nil;
     [self handleRefreshButton:nil];
 }
-
 
 
 

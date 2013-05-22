@@ -38,14 +38,6 @@
     [self updateUI];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    // show toolbar
-    self.navigationController.toolbarHidden = NO;
-}
-
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
@@ -54,7 +46,6 @@
     if ([self isMovingFromParentViewController] && self.articleWebView.isLoading) {
         [[UIApplication sharedApplication] hideNetworkActivityIndicator];
         [self.articleWebView stopLoading];
-        self.navigationController.toolbarHidden = YES;
     }
 }
 
