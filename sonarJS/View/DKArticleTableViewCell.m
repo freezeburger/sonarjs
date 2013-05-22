@@ -70,7 +70,7 @@
 
     // set outlets
     self.titleLabel.text = self.articleTitle;
-    self.urlLabel.text = [NSString stringWithFormat:@"%@ at %@", timeAgo, hostname];
+    self.urlLabel.text = [NSString stringWithFormat:@"%@ - %@", timeAgo, hostname];
     self.commentsLabel.text = [NSString stringWithFormat:@"%d up, %d down, %d comments", self.articleUpvotes, self.articleDownvotes, self.articleComments];
 
 }

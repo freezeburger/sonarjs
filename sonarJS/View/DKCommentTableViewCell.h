@@ -10,4 +10,6 @@
 
 @interface DKCommentTableViewCell : UITableViewCell
 @property (strong, nonatomic) NSString *comment;
+@property (strong, nonatomic) NSString *author;
+@property (nonatomic) NSInteger created;
 @end

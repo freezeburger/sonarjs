@@ -23,6 +23,14 @@
 {
     [super viewDidLoad];
     [self.refreshControl addTarget:self action:@selector(handlePullToRefresh:) forControlEvents:UIControlEventValueChanged];
+
+    [self updateUI];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self updateUI];
 }
 
 
@@ -93,6 +101,8 @@
     DKCommentTableViewCell *cell = (DKCommentTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     cell.comment = [self.comments[indexPath.item] objectForKey:@"body"];
+    cell.author = [self.comments[indexPath.item] objectForKey:@"username"];
+    cell.created = [[self.comments[indexPath.item] objectForKey:@"ctime"] doubleValue];
     
     return cell;
 }
@@ -105,6 +115,9 @@
     screenSize.width -= 80.0f;
     CGSize size = [comment sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:screenSize];
     size.height += 80.0f;
+    
+    NSLog(@"height called");
+
     return size.height;
 }
 
