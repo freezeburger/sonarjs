@@ -9,9 +9,10 @@
 #import "DKCommentsTableViewController.h"
 #import "UIApplication+NetworkActivityManager.h"
 #import "DKEchoJS.h"
+#import "DKCommentTableViewCell.h"
 
 @interface DKCommentsTableViewController ()
-
+@property (nonatomic, strong) NSArray *comments;
 @end
 
 @implementation DKCommentsTableViewController
@@ -35,6 +36,21 @@
     [self loadComments];
 }
 
+- (void)setComments:(NSArray *)comments
+{
+    _comments = comments;
+    [self updateUI];
+}
+
+
+
+#pragma mark - UI
+
+- (void)updateUI
+{
+    [self.tableView reloadData]; // improve performance by only partially rerendering this
+}
+
 
 
 #pragma mark - Helpers
@@ -45,7 +61,9 @@
     [self.refreshControl beginRefreshing];
     [self.tableView scrollRectToVisible:self.refreshControl.frame animated:NO];
 
-    [[DKEchoJS sharedInstance] retrieveCommentsForArticleId:self.articleId success:^(id comments){        
+    [[DKEchoJS sharedInstance] retrieveCommentsForArticleId:self.articleId success:^(id comments){
+        self.comments = comments;
+        
         [[UIApplication sharedApplication] hideNetworkActivityIndicator];
         [self.refreshControl endRefreshing];
     }];
@@ -66,18 +84,25 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return 0;
+    return [self.comments count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Comment";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    DKCommentTableViewCell *cell = (DKCommentTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    cell.comment = [self.comments[indexPath.item] objectForKey:@"body"];
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *comment = [self.comments[indexPath.item] objectForKey:@"body"];
+    
+    CGSize size = [comment sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:[[UIScreen mainScreen] bounds].size];
+    return size.height;
 }
 
 @end
