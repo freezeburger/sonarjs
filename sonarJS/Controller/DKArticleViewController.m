@@ -7,7 +7,7 @@
 //
 
 #import "DKArticleViewController.h"
-#import "DKCommentsViewController.h"
+#import "DKCommentsTableViewController.h"
 #import "UIApplication+NetworkActivityManager.h"
 #import "TUSafariActivity.h"
 #import "ARChromeActivity.h"
@@ -95,8 +95,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"Show Comments"]) {
-        if ([segue.destinationViewController isKindOfClass:[DKCommentsViewController class]]) {
-            DKCommentsViewController *destinationController = (DKCommentsViewController *)segue.destinationViewController;
+        if ([segue.destinationViewController isKindOfClass:[DKCommentsTableViewController class]]) {
+            DKCommentsTableViewController *destinationController = (DKCommentsTableViewController *)segue.destinationViewController;
             
             destinationController.articleId = self.articleId;
         }

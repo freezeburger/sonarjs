@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface DKCommentsTableViewController : UITableViewController
-
+@property (nonatomic) NSInteger articleId;
 @end

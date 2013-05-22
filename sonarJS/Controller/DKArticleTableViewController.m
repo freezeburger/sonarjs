@@ -135,15 +135,19 @@
 }
 
 - (IBAction)handleRefreshButton:(id)sender {
-    [[UIApplication sharedApplication] showNetworkActivityIndicator];
     
     self.currentPage = 0;
+    
+    [[UIApplication sharedApplication] showNetworkActivityIndicator];
+    [self.refreshControl beginRefreshing];
+    [self.tableView scrollRectToVisible:self.refreshControl.frame animated:NO];
     
     [[DKEchoJS sharedInstance] retrieveArticlesOrderedBy:(self.showsLatest ? DKEchoJSOrderModeLatest :  DKEchoJSOrderModeTop) startingAtIndex:DK_ARTICLE_START_INDEX withCount:DK_ARTICLE_PAGE_COUNT success:^(id articles){
         self.data = [articles mutableCopy]; // this will update the ui, so we need to call it here!!
 
         [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
         
+        [self.refreshControl endRefreshing];
         [[UIApplication sharedApplication] hideNetworkActivityIndicator];
     }];
 
@@ -152,20 +156,23 @@
 - (IBAction)handlePullToRefresh:(id)sender
 {
     self.currentPage = 0;
-    [self.refreshControl beginRefreshing];
+
     [[UIApplication sharedApplication] showNetworkActivityIndicator];
+    [self.refreshControl beginRefreshing];
+    [self.tableView scrollRectToVisible:self.refreshControl.frame animated:NO];
     
     [[DKEchoJS sharedInstance] retrieveArticlesOrderedBy:(self.showsLatest ? DKEchoJSOrderModeLatest :  DKEchoJSOrderModeTop) startingAtIndex:DK_ARTICLE_START_INDEX withCount:DK_ARTICLE_PAGE_COUNT success:^(id articles){
         self.data = [articles mutableCopy]; // this will update the ui, so we need to call it here!!
         
         [self.refreshControl endRefreshing];
-    
         [[UIApplication sharedApplication] hideNetworkActivityIndicator];
     }];
 }
 
 - (IBAction)handleInfiniteScroll:(id)sender
 {
+    [[UIApplication sharedApplication] showNetworkActivityIndicator];
+
     self.currentPage += 1;
     [[DKEchoJS sharedInstance] retrieveArticlesOrderedBy:(self.showsLatest ? DKEchoJSOrderModeLatest :  DKEchoJSOrderModeTop) startingAtIndex:self.currentPage * DK_ARTICLE_PAGE_COUNT withCount:DK_ARTICLE_PAGE_COUNT success:^(id JSON){
         
@@ -173,6 +180,7 @@
         [self updateUI];
         
         [self.tableView.infiniteScrollingView stopAnimating];
+        [[UIApplication sharedApplication] hideNetworkActivityIndicator];
     }];
 
 }

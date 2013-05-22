@@ -289,6 +289,10 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Comments" id="6ta-r1-i8Z"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="DKB-bu-2lB">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.75294119120000003" green="0.1411764771" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1wF-YW-pir" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

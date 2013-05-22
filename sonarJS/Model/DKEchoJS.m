@@ -41,4 +41,33 @@
     });
 }
 
+// {
+//   body: "Welcome to Echo JS everyone!",
+//   username: "fcambus",
+//   up: 2,
+//   ctime: 1321566479,
+//   replies: [ ]
+// },
+
+- (void)retrieveCommentsForArticleId:(NSInteger)articleId success:(void (^)(id comments))success
+{
+    NSString *urlString = [NSString stringWithFormat:@"http://www.echojs.com/api/getcomments/%d", articleId];
+    
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    dispatch_queue_t q = dispatch_queue_create("comments", NULL); // serial
+    dispatch_async(q, ^{
+        AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id comments) {
+            
+            // @TODO: check for errors
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                success([comments valueForKeyPath:@"comments"]);
+            });
+        } failure:nil];
+        [operation start];
+    });
+}
+
 @end
