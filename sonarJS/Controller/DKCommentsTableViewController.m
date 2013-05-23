@@ -23,14 +23,12 @@
 {
     [super viewDidLoad];
     [self.refreshControl addTarget:self action:@selector(handlePullToRefresh:) forControlEvents:UIControlEventValueChanged];
-
-    [self updateUI];
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
-    [self updateUI];
+    [super viewDidAppear:animated];
+//    [self updateUI];
 }
 
 
@@ -86,6 +84,14 @@
     [self loadComments];
 }
 
+#pragma mark - Handle Rotation
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+    [self updateUI];
+}
+
 
 
 #pragma mark - Table view data source
@@ -103,22 +109,33 @@
     cell.comment = [self.comments[indexPath.item] objectForKey:@"body"];
     cell.author = [self.comments[indexPath.item] objectForKey:@"username"];
     cell.created = [[self.comments[indexPath.item] objectForKey:@"ctime"] doubleValue];
-    
+
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *comment = [self.comments[indexPath.item] objectForKey:@"body"];
-    
-    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
-    screenSize.width -= 80.0f;
-    CGSize size = [comment sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:screenSize];
-    size.height += 80.0f;
-    
-    NSLog(@"height called");
 
-    return size.height;
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    
+    // calculate size / or width based on interface orientation
+    if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait) {
+        screenSize.width -= 80.0f;
+    } else {
+        screenSize.width += 60.0f;
+    }
+
+    CGSize size = [comment sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:screenSize];
+
+    // calculate size / or width based on interface orientation
+    if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait) {
+        size.height += 60.0f;
+        return size.height;
+    } else {
+        size.width -= 80.0f;
+        return size.width;
+    }
 }
 
 @end

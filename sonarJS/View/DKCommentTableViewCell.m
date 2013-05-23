@@ -10,8 +10,8 @@
 #import "NSDate+TimeAgo.h"
 
 @interface DKCommentTableViewCell ()
-@property (weak, nonatomic) IBOutlet UITextView *commentTextView;
 @property (weak, nonatomic) IBOutlet UILabel *commentTitleLabel;
+@property (weak, nonatomic) IBOutlet UITextView *commentTextView;
 @end
 
 @implementation DKCommentTableViewCell
@@ -45,12 +45,14 @@
 
 - (void)updateUI
 {
-    NSLog(@"%f", self.commentTextView.contentSize.height);
-    
+    // add performance by only re-rendering if something changed for real
+
     NSDate *date = [[NSDate alloc] initWithTimeIntervalSince1970:self.created];
     NSString *timeAgo = [date timeAgo];
     self.commentTitleLabel.text = [NSString stringWithFormat: @"%@ - %@", timeAgo, self.author];
     self.commentTextView.text = self.comment;
+    
+    [self.commentTextView sizeToFit];
     
     CGRect bodyFrame = self.commentTextView.frame;
     bodyFrame.size = self.commentTextView.contentSize;

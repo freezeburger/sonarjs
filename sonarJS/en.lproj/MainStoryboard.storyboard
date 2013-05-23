@@ -239,10 +239,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMd-Im-zOp">
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="63" id="ZHI-nc-kbx"/>
-                                            </constraints>
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
+                                            <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </mutableString>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
@@ -250,7 +247,6 @@
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Lusername at time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53F-04-EX5">
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="jch-Rs-e3o"/>
-                                                <constraint firstAttribute="width" constant="272" id="nbx-Zf-3xq"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -260,11 +256,13 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="RMd-Im-zOp" firstAttribute="leading" secondItem="n5v-o5-xuG" secondAttribute="leading" constant="20" type="default" id="PT5-se-PzO"/>
-                                    <constraint firstAttribute="trailing" secondItem="53F-04-EX5" secondAttribute="trailing" constant="20" type="default" id="TJT-6m-tdK"/>
-                                    <constraint firstAttribute="trailing" secondItem="RMd-Im-zOp" secondAttribute="trailing" constant="20" type="default" id="Y84-WU-7eY"/>
-                                    <constraint firstItem="RMd-Im-zOp" firstAttribute="top" secondItem="n5v-o5-xuG" secondAttribute="top" constant="40" type="user" id="e6b-kc-Zo3"/>
-                                    <constraint firstItem="53F-04-EX5" firstAttribute="top" secondItem="n5v-o5-xuG" secondAttribute="top" constant="20" type="default" id="hL8-Wl-ckb"/>
+                                    <constraint firstItem="53F-04-EX5" firstAttribute="leading" secondItem="n5v-o5-xuG" secondAttribute="leading" constant="28" type="user" id="3WC-5B-AfD"/>
+                                    <constraint firstItem="53F-04-EX5" firstAttribute="top" secondItem="n5v-o5-xuG" secondAttribute="top" constant="20" type="default" id="9Xc-xy-oV9"/>
+                                    <constraint firstAttribute="trailing" secondItem="53F-04-EX5" secondAttribute="trailing" constant="20" type="user" id="CED-qG-4q8"/>
+                                    <constraint firstAttribute="trailing" secondItem="RMd-Im-zOp" secondAttribute="trailing" constant="20" type="default" id="Kiu-8b-PMN"/>
+                                    <constraint firstAttribute="bottom" secondItem="RMd-Im-zOp" secondAttribute="bottom" constant="23" type="user" id="eER-fq-D0L"/>
+                                    <constraint firstItem="RMd-Im-zOp" firstAttribute="top" secondItem="n5v-o5-xuG" secondAttribute="top" constant="40" type="user" id="iKj-eH-0X4"/>
+                                    <constraint firstItem="RMd-Im-zOp" firstAttribute="leading" secondItem="n5v-o5-xuG" secondAttribute="leading" constant="20" type="default" id="tCv-Fw-aRn"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="commentTextView" destination="RMd-Im-zOp" id="1bc-jZ-RVG"/>
