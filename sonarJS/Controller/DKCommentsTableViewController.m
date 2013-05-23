@@ -86,9 +86,9 @@
 
 #pragma mark - Handle Rotation
 
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
-    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
     [self updateUI];
 }
 
@@ -115,8 +115,27 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *comment = [self.comments[indexPath.item] objectForKey:@"body"];
+    NSLog(@"called");
+    if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait) {
+        NSLog(@"portrait");
+        NSString *comment = [self.comments[indexPath.item] objectForKey:@"body"];
 
+        CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+        screenSize.width -= 80.0f;
+        CGSize size = [comment sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:screenSize];
+        size.height += 60.0f;
+    
+        return size.height;
+    } else if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft || [[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight) {
+        NSLog(@"landscape");
+        return 130.0f;
+    } else {
+        NSLog(@"other");
+        return 130.0f;
+    }
+    
+    /**
+    
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
     
     // calculate size / or width based on interface orientation
@@ -125,7 +144,8 @@
     } else {
         screenSize.width += 60.0f;
     }
-
+    
+    // switch height and width?
     CGSize size = [comment sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:screenSize];
 
     // calculate size / or width based on interface orientation
@@ -136,6 +156,12 @@
         size.width -= 80.0f;
         return size.width;
     }
+    
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    screenSize.width -= 80.0f;
+    CGSize size = [comment sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:screenSize];
+    size.height += 60.0f;
+     */
 }
 
 @end
