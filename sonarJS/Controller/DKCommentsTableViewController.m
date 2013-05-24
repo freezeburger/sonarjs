@@ -55,8 +55,6 @@
 {
     _comments = comments;
     [self updateUI];
-    
-    NSLog(@"%@", comments);
 }
 
 
@@ -112,6 +110,10 @@
     cell.comment = [self.comments[indexPath.item] objectForKey:@"body"];
     cell.author = [self.comments[indexPath.item] objectForKey:@"username"];
     cell.created = [[self.comments[indexPath.item] objectForKey:@"ctime"] doubleValue];
+    
+    [cell setNeedsLayout];
+    [cell setNeedsDisplay];
+    [cell setNeedsUpdateConstraints];
 
     return cell;
 }
@@ -126,12 +128,6 @@
     CGSize size = [comment sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:CGSizeMake([self.tableView frame].size.width - 80.0f, 2009)]; // screenSize
     size.height += 60.0f;
     
-    // invert calculated size in portrait mode
-//    if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft || [[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight) {
-//        CGFloat width = size.width;
-//        size.width = size.height;
-//        size.height = width;
-//    }
     return size.height;
 }
 
