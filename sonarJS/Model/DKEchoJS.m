@@ -63,11 +63,21 @@
             // @TODO: check for errors
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                success([comments valueForKeyPath:@"comments"]);
+                NSMutableArray *flatComments = [[NSMutableArray alloc] init];
+                [self flattenComments:[comments valueForKeyPath:@"comments"] toMutableArray:flatComments];
+                success(flatComments);
             });
         } failure:nil];
         [operation start];
     });
+}
+
+- (void)flattenComments:(id)comments toMutableArray:(NSMutableArray *)mutableArray
+{
+    for (id current in comments) {
+        [mutableArray addObject:current];
+        [self flattenComments:[current valueForKeyPath:@"replies"] toMutableArray:mutableArray];
+    }
 }
 
 @end

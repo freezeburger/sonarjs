@@ -10,6 +10,9 @@
 #import "UIApplication+NetworkActivityManager.h"
 #import "DKEchoJS.h"
 #import "DKCommentTableViewCell.h"
+#import "Underscore.h"
+
+#define _ Underscore
 
 @interface DKCommentsTableViewController ()
 @property (nonatomic, strong) NSArray *comments;
@@ -52,6 +55,8 @@
 {
     _comments = comments;
     [self updateUI];
+    
+    NSLog(@"%@", comments);
 }
 
 
