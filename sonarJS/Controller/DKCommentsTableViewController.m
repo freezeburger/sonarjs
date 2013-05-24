@@ -28,7 +28,13 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-//    [self updateUI];
+    [self updateUI]; // ugly, but somehow this works
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+    [self updateUI];
 }
 
 
@@ -84,14 +90,6 @@
     [self loadComments];
 }
 
-#pragma mark - Handle Rotation
-
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
-{
-    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
-    [self updateUI];
-}
-
 
 
 #pragma mark - Table view data source
@@ -115,53 +113,21 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"called");
-    if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait) {
-        NSLog(@"portrait");
-        NSString *comment = [self.comments[indexPath.item] objectForKey:@"body"];
-
-        CGSize screenSize = [[UIScreen mainScreen] bounds].size;
-        screenSize.width -= 80.0f;
-        CGSize size = [comment sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:screenSize];
-        size.height += 60.0f;
-    
-        return size.height;
-    } else if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft || [[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight) {
-        NSLog(@"landscape");
-        return 130.0f;
-    } else {
-        NSLog(@"other");
-        return 130.0f;
-    }
-    
-    /**
-    
-    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
-    
-    // calculate size / or width based on interface orientation
-    if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait) {
-        screenSize.width -= 80.0f;
-    } else {
-        screenSize.width += 60.0f;
-    }
-    
-    // switch height and width?
-    CGSize size = [comment sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:screenSize];
-
-    // calculate size / or width based on interface orientation
-    if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait) {
-        size.height += 60.0f;
-        return size.height;
-    } else {
-        size.width -= 80.0f;
-        return size.width;
-    }
+    NSString *comment = [self.comments[indexPath.item] objectForKey:@"body"];
     
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
     screenSize.width -= 80.0f;
-    CGSize size = [comment sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:screenSize];
+    
+    CGSize size = [comment sizeWithFont:[UIFont systemFontOfSize:12.0f] constrainedToSize:CGSizeMake([self.tableView frame].size.width - 80.0f, 2009)]; // screenSize
     size.height += 60.0f;
-     */
+    
+    // invert calculated size in portrait mode
+//    if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft || [[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight) {
+//        CGFloat width = size.width;
+//        size.width = size.height;
+//        size.height = width;
+//    }
+    return size.height;
 }
 
 @end
