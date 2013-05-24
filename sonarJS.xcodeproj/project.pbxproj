@@ -48,10 +48,6 @@
 		1F47005A174BDCC00006EA6F /* barback.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F470058174BDCC00006EA6F /* barback.png */; };
 		1F47005D174C0F860006EA6F /* DKCommentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F47005C174C0F860006EA6F /* DKCommentsTableViewController.m */; };
 		1F470060174CAA6F0006EA6F /* DKCommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F47005F174CAA6F0006EA6F /* DKCommentTableViewCell.m */; };
-		1F47006C174F5B250006EA6F /* Underscore+Functional.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F470063174F5B250006EA6F /* Underscore+Functional.m */; };
-		1F47006D174F5B250006EA6F /* Underscore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F470066174F5B250006EA6F /* Underscore.m */; };
-		1F47006E174F5B250006EA6F /* USArrayWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F470068174F5B250006EA6F /* USArrayWrapper.m */; };
-		1F47006F174F5B250006EA6F /* USDictionaryWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F47006B174F5B250006EA6F /* USDictionaryWrapper.m */; };
 		1F54031D1742928700388083 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F54031C1742928700388083 /* SystemConfiguration.framework */; };
 		1F54031F1742929000388083 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F54031E1742929000388083 /* MobileCoreServices.framework */; };
 		1F54036917429A9C00388083 /* comments.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F54032117429A9C00388083 /* comments.png */; };
@@ -169,16 +165,6 @@
 		1F47005C174C0F860006EA6F /* DKCommentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCommentsTableViewController.m; sourceTree = "<group>"; };
 		1F47005E174CAA6F0006EA6F /* DKCommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCommentTableViewCell.h; sourceTree = "<group>"; };
 		1F47005F174CAA6F0006EA6F /* DKCommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCommentTableViewCell.m; sourceTree = "<group>"; };
-		1F470062174F5B250006EA6F /* Underscore+Functional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Underscore+Functional.h"; sourceTree = "<group>"; };
-		1F470063174F5B250006EA6F /* Underscore+Functional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Underscore+Functional.m"; sourceTree = "<group>"; };
-		1F470064174F5B250006EA6F /* Underscore-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Underscore-Prefix.pch"; sourceTree = "<group>"; };
-		1F470065174F5B250006EA6F /* Underscore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Underscore.h; sourceTree = "<group>"; };
-		1F470066174F5B250006EA6F /* Underscore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Underscore.m; sourceTree = "<group>"; };
-		1F470067174F5B250006EA6F /* USArrayWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USArrayWrapper.h; sourceTree = "<group>"; };
-		1F470068174F5B250006EA6F /* USArrayWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USArrayWrapper.m; sourceTree = "<group>"; };
-		1F470069174F5B250006EA6F /* USConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USConstants.h; sourceTree = "<group>"; };
-		1F47006A174F5B250006EA6F /* USDictionaryWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USDictionaryWrapper.h; sourceTree = "<group>"; };
-		1F47006B174F5B250006EA6F /* USDictionaryWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USDictionaryWrapper.m; sourceTree = "<group>"; };
 		1F54031C1742928700388083 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1F54031E1742929000388083 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		1F54032117429A9C00388083 /* comments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comments.png; sourceTree = "<group>"; };
@@ -414,23 +400,6 @@
 			path = ARChromeActivity;
 			sourceTree = "<group>";
 		};
-		1F470061174F5B250006EA6F /* Underscore */ = {
-			isa = PBXGroup;
-			children = (
-				1F470062174F5B250006EA6F /* Underscore+Functional.h */,
-				1F470063174F5B250006EA6F /* Underscore+Functional.m */,
-				1F470064174F5B250006EA6F /* Underscore-Prefix.pch */,
-				1F470065174F5B250006EA6F /* Underscore.h */,
-				1F470066174F5B250006EA6F /* Underscore.m */,
-				1F470067174F5B250006EA6F /* USArrayWrapper.h */,
-				1F470068174F5B250006EA6F /* USArrayWrapper.m */,
-				1F470069174F5B250006EA6F /* USConstants.h */,
-				1F47006A174F5B250006EA6F /* USDictionaryWrapper.h */,
-				1F47006B174F5B250006EA6F /* USDictionaryWrapper.m */,
-			);
-			path = Underscore;
-			sourceTree = "<group>";
-		};
 		1F54032017429A9C00388083 /* sonarJS */ = {
 			isa = PBXGroup;
 			children = (
@@ -461,7 +430,6 @@
 		1F54033717429A9C00388083 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				1F470061174F5B250006EA6F /* Underscore */,
 				1F47004717492D970006EA6F /* ARChromeActivity */,
 				1F47002617492CC90006EA6F /* TUSafariActivity */,
 				1F071574174908C50080B014 /* FlatUIKit */,
@@ -676,10 +644,6 @@
 				1F47004E17492D970006EA6F /* ARChromeActivity.m in Sources */,
 				1F47005D174C0F860006EA6F /* DKCommentsTableViewController.m in Sources */,
 				1F470060174CAA6F0006EA6F /* DKCommentTableViewCell.m in Sources */,
-				1F47006C174F5B250006EA6F /* Underscore+Functional.m in Sources */,
-				1F47006D174F5B250006EA6F /* Underscore.m in Sources */,
-				1F47006E174F5B250006EA6F /* USArrayWrapper.m in Sources */,
-				1F47006F174F5B250006EA6F /* USDictionaryWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
