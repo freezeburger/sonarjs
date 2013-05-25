@@ -44,8 +44,6 @@
 		1F47005217492D970006EA6F /* ARChromeActivity~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F47004D17492D970006EA6F /* ARChromeActivity~ipad.png */; };
 		1F470055174BDBFA0006EA6F /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F470053174BDBFA0006EA6F /* back@2x.png */; };
 		1F470056174BDBFA0006EA6F /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F470054174BDBFA0006EA6F /* back.png */; };
-		1F470059174BDCC00006EA6F /* barback@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F470057174BDCC00006EA6F /* barback@2x.png */; };
-		1F47005A174BDCC00006EA6F /* barback.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F470058174BDCC00006EA6F /* barback.png */; };
 		1F47005D174C0F860006EA6F /* DKCommentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F47005C174C0F860006EA6F /* DKCommentsTableViewController.m */; };
 		1F470060174CAA6F0006EA6F /* DKCommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F47005F174CAA6F0006EA6F /* DKCommentTableViewCell.m */; };
 		1F54031D1742928700388083 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F54031C1742928700388083 /* SystemConfiguration.framework */; };
@@ -159,8 +157,6 @@
 		1F47004D17492D970006EA6F /* ARChromeActivity~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ARChromeActivity~ipad.png"; sourceTree = "<group>"; };
 		1F470053174BDBFA0006EA6F /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
 		1F470054174BDBFA0006EA6F /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
-		1F470057174BDCC00006EA6F /* barback@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barback@2x.png"; sourceTree = "<group>"; };
-		1F470058174BDCC00006EA6F /* barback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barback.png; sourceTree = "<group>"; };
 		1F47005B174C0F860006EA6F /* DKCommentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCommentsTableViewController.h; sourceTree = "<group>"; };
 		1F47005C174C0F860006EA6F /* DKCommentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCommentsTableViewController.m; sourceTree = "<group>"; };
 		1F47005E174CAA6F0006EA6F /* DKCommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCommentTableViewCell.h; sourceTree = "<group>"; };
@@ -245,8 +241,6 @@
 		1F07153A17477F510080B014 /* Application Support */ = {
 			isa = PBXGroup;
 			children = (
-				1F470057174BDCC00006EA6F /* barback@2x.png */,
-				1F470058174BDCC00006EA6F /* barback.png */,
 				1F470053174BDBFA0006EA6F /* back@2x.png */,
 				1F470054174BDBFA0006EA6F /* back.png */,
 				1F54033117429A9C00388083 /* DKAppDelegate.h */,
@@ -594,8 +588,6 @@
 				1F47005217492D970006EA6F /* ARChromeActivity~ipad.png in Resources */,
 				1F470055174BDBFA0006EA6F /* back@2x.png in Resources */,
 				1F470056174BDBFA0006EA6F /* back.png in Resources */,
-				1F470059174BDCC00006EA6F /* barback@2x.png in Resources */,
-				1F47005A174BDCC00006EA6F /* barback.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
