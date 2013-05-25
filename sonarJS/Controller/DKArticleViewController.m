@@ -110,7 +110,8 @@
 }
 
 - (IBAction)handleActionButton:(id)sender {
-    NSArray *postItems = @[self.articleTitle, [NSURL URLWithString:self.articleUrl]];
+    NSString *content = [NSString stringWithFormat:@"%@ via @sonarJS", self.articleTitle];
+    NSArray *postItems = @[content, [NSURL URLWithString:self.articleUrl]];
     NSArray *activities = @[[[TUSafariActivity alloc] init], [[ARChromeActivity alloc] init]];
 
     UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:postItems applicationActivities:activities];

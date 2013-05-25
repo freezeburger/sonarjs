@@ -778,14 +778,14 @@
 		1F31A77717312EDB004343FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Damien Klinnert (HK9352RSSJ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Damien Klinnert (HK9352RSSJ)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "sonarJS/sonarJS-Prefix.pch";
 				INFOPLIST_FILE = "sonarJS/sonarJS-Info.plist";
 				PRODUCT_NAME = sonarJS;
-				PROVISIONING_PROFILE = "E0FD21E5-78F4-4ADA-B690-34D3EEF599A8";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E0FD21E5-78F4-4ADA-B690-34D3EEF599A8";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -793,14 +793,14 @@
 		1F31A77817312EDB004343FF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Damien Klinnert (HK9352RSSJ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Damien Klinnert (HK9352RSSJ)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "sonarJS/sonarJS-Prefix.pch";
 				INFOPLIST_FILE = "sonarJS/sonarJS-Info.plist";
 				PRODUCT_NAME = sonarJS;
-				PROVISIONING_PROFILE = "E0FD21E5-78F4-4ADA-B690-34D3EEF599A8";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E0FD21E5-78F4-4ADA-B690-34D3EEF599A8";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
