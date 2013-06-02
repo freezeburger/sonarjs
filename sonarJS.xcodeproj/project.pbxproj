@@ -76,7 +76,22 @@
 		1F54038E17429DA800388083 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F54038D17429DA800388083 /* Default@2x.png */; };
 		1F8CE91E173F7BE10062B027 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8CE91D173F7BE10062B027 /* icon@2x.png */; };
 		1F8CE920173F7BE60062B027 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8CE91F173F7BE60062B027 /* icon.png */; };
+		1FBB5EEE175BB75E0045C0F8 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FBB5EED175BB75E0045C0F8 /* SenTestingKit.framework */; };
+		1FBB5EEF175BB75E0045C0F8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F31A75617312EDB004343FF /* UIKit.framework */; };
+		1FBB5EF0175BB75E0045C0F8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F31A75817312EDB004343FF /* Foundation.framework */; };
+		1FBB5EF6175BB75E0045C0F8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1FBB5EF4175BB75E0045C0F8 /* InfoPlist.strings */; };
+		1FBB5EF9175BB75E0045C0F8 /* sonarJSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBB5EF8175BB75E0045C0F8 /* sonarJSTests.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1FBB5EFE175BB7790045C0F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F31A74B17312EDB004343FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F31A75217312EDB004343FF;
+			remoteInfo = sonarJS;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1F07150917457FB50080B014 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -218,6 +233,13 @@
 		1F54038D17429DA800388083 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		1F8CE91D173F7BE10062B027 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		1F8CE91F173F7BE60062B027 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		1FBB5EEC175BB75E0045C0F8 /* sonarJSTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sonarJSTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FBB5EED175BB75E0045C0F8 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		1FBB5EF3175BB75E0045C0F8 /* sonarJSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "sonarJSTests-Info.plist"; sourceTree = "<group>"; };
+		1FBB5EF5175BB75E0045C0F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1FBB5EF7175BB75E0045C0F8 /* sonarJSTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sonarJSTests.h; sourceTree = "<group>"; };
+		1FBB5EF8175BB75E0045C0F8 /* sonarJSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sonarJSTests.m; sourceTree = "<group>"; };
+		1FBB5EFA175BB75E0045C0F8 /* sonarJSTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "sonarJSTests-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +254,16 @@
 				1F31A75717312EDB004343FF /* UIKit.framework in Frameworks */,
 				1F31A75917312EDB004343FF /* Foundation.framework in Frameworks */,
 				1F31A75B17312EDB004343FF /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FBB5EE8175BB75E0045C0F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FBB5EEE175BB75E0045C0F8 /* SenTestingKit.framework in Frameworks */,
+				1FBB5EEF175BB75E0045C0F8 /* UIKit.framework in Frameworks */,
+				1FBB5EF0175BB75E0045C0F8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +372,7 @@
 				1F8CE91F173F7BE60062B027 /* icon.png */,
 				1F8CE91D173F7BE10062B027 /* icon@2x.png */,
 				1F54032017429A9C00388083 /* sonarJS */,
+				1FBB5EF1175BB75E0045C0F8 /* sonarJSTests */,
 				1F31A75517312EDB004343FF /* Frameworks */,
 				1F31A75417312EDB004343FF /* Products */,
 			);
@@ -349,6 +382,7 @@
 			isa = PBXGroup;
 			children = (
 				1F31A75317312EDB004343FF /* sonarJS.app */,
+				1FBB5EEC175BB75E0045C0F8 /* sonarJSTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -363,6 +397,7 @@
 				1F31A75617312EDB004343FF /* UIKit.framework */,
 				1F31A75817312EDB004343FF /* Foundation.framework */,
 				1F31A75A17312EDB004343FF /* CoreGraphics.framework */,
+				1FBB5EED175BB75E0045C0F8 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -491,6 +526,26 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		1FBB5EF1175BB75E0045C0F8 /* sonarJSTests */ = {
+			isa = PBXGroup;
+			children = (
+				1FBB5EF7175BB75E0045C0F8 /* sonarJSTests.h */,
+				1FBB5EF8175BB75E0045C0F8 /* sonarJSTests.m */,
+				1FBB5EF2175BB75E0045C0F8 /* Supporting Files */,
+			);
+			path = sonarJSTests;
+			sourceTree = "<group>";
+		};
+		1FBB5EF2175BB75E0045C0F8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1FBB5EF3175BB75E0045C0F8 /* sonarJSTests-Info.plist */,
+				1FBB5EF4175BB75E0045C0F8 /* InfoPlist.strings */,
+				1FBB5EFA175BB75E0045C0F8 /* sonarJSTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -510,6 +565,25 @@
 			productName = echojs;
 			productReference = 1F31A75317312EDB004343FF /* sonarJS.app */;
 			productType = "com.apple.product-type.application";
+		};
+		1FBB5EEB175BB75E0045C0F8 /* sonarJSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FBB5EFD175BB75E0045C0F8 /* Build configuration list for PBXNativeTarget "sonarJSTests" */;
+			buildPhases = (
+				1FBB5EE7175BB75E0045C0F8 /* Sources */,
+				1FBB5EE8175BB75E0045C0F8 /* Frameworks */,
+				1FBB5EE9175BB75E0045C0F8 /* Resources */,
+				1FBB5EEA175BB75E0045C0F8 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1FBB5EFF175BB7790045C0F8 /* PBXTargetDependency */,
+			);
+			name = sonarJSTests;
+			productName = sonarJSTests;
+			productReference = 1FBB5EEC175BB75E0045C0F8 /* sonarJSTests.octest */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -555,6 +629,7 @@
 			projectRoot = "";
 			targets = (
 				1F31A75217312EDB004343FF /* sonarJS */,
+				1FBB5EEB175BB75E0045C0F8 /* sonarJSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -591,7 +666,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1FBB5EE9175BB75E0045C0F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FBB5EF6175BB75E0045C0F8 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1FBB5EEA175BB75E0045C0F8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1F31A74F17312EDB004343FF /* Sources */ = {
@@ -639,7 +738,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1FBB5EE7175BB75E0045C0F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FBB5EF9175BB75E0045C0F8 /* sonarJSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1FBB5EFF175BB7790045C0F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F31A75217312EDB004343FF /* sonarJS */;
+			targetProxy = 1FBB5EFE175BB7790045C0F8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1F47002717492CC90006EA6F /* TUSafariActivity.strings */ = {
@@ -700,6 +815,14 @@
 				1F54035917429A9C00388083 /* zh_Hans */,
 			);
 			name = NSDateTimeAgo.strings;
+			sourceTree = "<group>";
+		};
+		1FBB5EF4175BB75E0045C0F8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1FBB5EF5175BB75E0045C0F8 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -774,6 +897,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "sonarJS/sonarJS-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "sonarJS/sonarJS-Info.plist";
 				PRODUCT_NAME = sonarJS;
 				PROVISIONING_PROFILE = "";
@@ -789,11 +913,46 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "sonarJS/sonarJS-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "sonarJS/sonarJS-Info.plist";
 				PRODUCT_NAME = sonarJS;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		1FBB5EFB175BB75E0045C0F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/sonarJS.app/sonarJS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "sonarJSTests/sonarJSTests-Prefix.pch";
+				INFOPLIST_FILE = "sonarJSTests/sonarJSTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		1FBB5EFC175BB75E0045C0F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/sonarJS.app/sonarJS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "sonarJSTests/sonarJSTests-Prefix.pch";
+				INFOPLIST_FILE = "sonarJSTests/sonarJSTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
@@ -817,6 +976,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		1FBB5EFD175BB75E0045C0F8 /* Build configuration list for PBXNativeTarget "sonarJSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FBB5EFB175BB75E0045C0F8 /* Debug */,
+				1FBB5EFC175BB75E0045C0F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
