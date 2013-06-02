@@ -239,13 +239,17 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMd-Im-zOp">
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="63" id="zce-lw-tIN"/>
+                                            </constraints>
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                             <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                                         </textView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Lusername at time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53F-04-EX5">
                                             <constraints>
+                                                <constraint firstAttribute="width" constant="272" id="CPk-kj-ARA"/>
                                                 <constraint firstAttribute="height" constant="21" id="jch-Rs-e3o"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -256,12 +260,10 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="53F-04-EX5" firstAttribute="leading" secondItem="n5v-o5-xuG" secondAttribute="leading" constant="28" type="user" id="3WC-5B-AfD"/>
+                                    <constraint firstItem="RMd-Im-zOp" firstAttribute="top" secondItem="n5v-o5-xuG" secondAttribute="top" constant="40" id="2Yw-36-yKe"/>
                                     <constraint firstItem="53F-04-EX5" firstAttribute="top" secondItem="n5v-o5-xuG" secondAttribute="top" constant="20" type="default" id="9Xc-xy-oV9"/>
-                                    <constraint firstAttribute="trailing" secondItem="53F-04-EX5" secondAttribute="trailing" constant="20" type="user" id="CED-qG-4q8"/>
                                     <constraint firstAttribute="trailing" secondItem="RMd-Im-zOp" secondAttribute="trailing" constant="20" type="default" id="Kiu-8b-PMN"/>
-                                    <constraint firstAttribute="bottom" secondItem="RMd-Im-zOp" secondAttribute="bottom" constant="23" type="user" id="eER-fq-D0L"/>
-                                    <constraint firstItem="RMd-Im-zOp" firstAttribute="top" secondItem="n5v-o5-xuG" secondAttribute="top" constant="40" type="user" id="iKj-eH-0X4"/>
+                                    <constraint firstItem="53F-04-EX5" firstAttribute="leading" secondItem="n5v-o5-xuG" secondAttribute="leading" constant="20" type="default" id="U2E-vA-dNc"/>
                                     <constraint firstItem="RMd-Im-zOp" firstAttribute="leading" secondItem="n5v-o5-xuG" secondAttribute="leading" constant="20" type="default" id="tCv-Fw-aRn"/>
                                 </constraints>
                                 <connections>
@@ -319,53 +321,6 @@
         <image name="comments.png" width="22" height="22"/>
         <image name="profile.png" width="22" height="22"/>
     </resources>
-    <classes>
-        <class className="DKArticleTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DKArticleTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="commentsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="urlLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DKArticleTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DKArticleTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="orderButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="DKArticleViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DKArticleViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="articleBackButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="articleWebView" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="commentsButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="spinner" candidateClass="UIActivityIndicatorView"/>
-            </relationships>
-        </class>
-        <class className="DKCommentTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DKCommentTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="commentTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="commentTitleLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DKCommentsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DKCommentsTableViewController.h"/>
-        </class>
-        <class className="ECSlidingViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ECSlidingViewController.h"/>
-        </class>
-        <class className="FUIButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FUIButton.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="UIRefreshControl" superclassName="UIControl">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIRefreshControl.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

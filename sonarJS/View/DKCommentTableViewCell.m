@@ -45,18 +45,31 @@
 
 - (void)updateUI
 {
-    // add performance by only re-rendering if something changed for real
-
     NSDate *date = [[NSDate alloc] initWithTimeIntervalSince1970:self.created];
     NSString *timeAgo = [date timeAgo];
     self.commentTitleLabel.text = [NSString stringWithFormat: @"%@ - %@", timeAgo, self.author];
     self.commentTextView.text = self.comment;
     
-    [self.commentTextView sizeToFit];
+//    [self.commentTextView sizeToFit];
     
     CGRect bodyFrame = self.commentTextView.frame;
     bodyFrame.size = self.commentTextView.contentSize;
+    bodyFrame.size.height += 280.0f;
     self.commentTextView.frame = bodyFrame;
+    
+    self.commentTextView.contentInset = UIEdgeInsetsMake(-8, -8, 0, 0);
+
+//    [self setNeedsDisplay];
+//    [self setNeedsLayout];
+//    [self setNeedsUpdateConstraints];
 }
+
+//- (void)prepareForReuse
+//{
+//    [self updateUI];
+//    [self setNeedsDisplay];
+//    [self setNeedsLayout];
+//    [self setNeedsUpdateConstraints];
+//}
 
 @end
