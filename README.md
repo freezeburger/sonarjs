@@ -5,7 +5,7 @@ sonarjs
 
 ## Stay up to date with the fast-paced JavaScript community on your iPhone
 
-![splash](http://github.com/damienklinnert/sonarjs/blob/master/Default.png)
+![splash](https://raw.github.com/damienklinnert/sonarjs/master/Default.png)
 
 Follow the latest articles about your favorite progamming language. Join the discussion and get in touch with other experts. Discover all the important content without the need to manage twitter lists or RSS feeds.
 
